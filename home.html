@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Partner Tech - Odoo Implementation Experts</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#EFF6FF] text-gray-900 overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 bg-blue-50/90 backdrop-blur-md border-b border-blue-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Menu Icon on Left -->
+            <button id="menuToggle" class="md:hidden flex items-center justify-center w-10 h-10 text-gray-600 hover:text-[#1e3a8a] transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            
+            <a href="home.html" class="flex items-center gap-3">
+                <img src="bp_logo.png" alt="Business Partner Tech Logo" class="h-10 w-auto logo-nav">
+            </a>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+                <a href="home.html" class="hover:text-[#1e3a8a] transition text-[#1e3a8a] font-semibold">Home</a>
+                <a href="services.html" class="hover:text-[#1e3a8a] transition">Services</a>
+                <a href="process.html" class="hover:text-[#1e3a8a] transition">Our Process</a>
+                <a href="about-us.html" class="hover:text-[#1e3a8a] transition">About Us</a>
+                <a href="contact.html" class="hover:text-[#1e3a8a] transition">Contact Us</a>
+            </div>
+            <a href="contact.html" class="bg-black text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#1e3a8a] transition duration-300">
+                Book a Demo
+            </a>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-blue-50 border-t border-blue-100">
+            <div class="px-6 py-4 space-y-4">
+                <a href="home.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition text-[#1e3a8a] font-semibold">Home</a>
+                <a href="services.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">Services</a>
+                <a href="process.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">Our Process</a>
+                <a href="about-us.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">About Us</a>
+                <a href="contact.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="hero-blob bg-blue-600 w-96 h-96 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2 blob-animated"></div>
+        <div class="hero-blob bg-blue-400 w-96 h-96 rounded-full bottom-0 right-0 translate-x-1/2 translate-y-1/2 blob-animated" style="animation-delay: 2s;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+            
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#1e3a8a] text-xs font-bold mb-6 fade-in-scale">
+                    <span class="w-2 h-2 rounded-full bg-[#60a5fa] animate-pulse"></span>
+                    Certified Odoo Gold Partner
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6">
+                    ERP Solutions for <br>
+                    <span class="text-gradient italic">limitless growth.</span>
+                </h1>
+                <p class="text-lg text-gray-500 mb-8 max-w-md leading-relaxed">
+                    Stop wrestling with disconnected spreadsheets. We implement, customize, and support your Odoo ecosystem so you can focus on scaling.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="contact.html" class="px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover-lift btn-ripple magnetic-btn">
+                        Start your Transformation
+                        <svg class="w-4 h-4 icon-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                    <a href="services.html" class="px-8 py-4 bg-white text-gray-900 border border-gray-200 rounded-full font-medium hover:bg-gray-50 transition flex items-center justify-center hover-lift magnetic-btn">
+                        View Our Services
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+                <div class="glass-card rounded-3xl p-6 relative z-10 max-w-md mx-auto lg:ml-auto card-3d animate-float">
+                    
+                    
+                    <div class="mt-4">
+                        <div class="flex justify-between items-end">
+                            <div>
+                                <p class="text-sm text-gray-500 font-medium uppercase tracking-wider">Status</p>
+                                <h3 class="text-2xl font-bold text-gray-900">Optimization Complete</h3>
+                            </div>
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex gap-3">
+                            <div class="h-2 w-full bg-gray-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#1e3a8a] w-[92%] progress-animated"></div>
+                            </div>
+                            <span class="text-xs font-bold text-[#1e3a8a]">92%</span>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2">Efficiency increased via Odoo Studio</p>
+                    </div>
+                </div>
+
+                <div class="absolute -top-12 -right-4 bg-white p-4 rounded-2xl shadow-xl z-20 animate-float pulse-glow">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-blue-100 p-2 rounded-lg">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold">Invoice #4022</p>
+                            <p class="text-[10px] text-green-500 font-bold">Paid Automatically</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="absolute -bottom-8 -left-8 bg-black text-white p-4 rounded-2xl shadow-xl z-20" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="flex items-center gap-3">
+                        
+                        <div>
+                            <p class="text-xs font-bold opacity-80">Inventory</p>
+                            <p class="text-sm font-bold">Synchronized</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flash Video Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-900 via-[#1e3a8a] to-gray-900 relative overflow-hidden">
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float-delayed"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-bold mb-6">
+                    <span class="w-2 h-2 rounded-full bg-[#60a5fa] animate-pulse"></span>
+                    Watch Our Story
+                </span>
+                <h2 class="text-4xl lg:text-6xl font-bold text-white mb-4">
+                    See Odoo in <span class="text-gradient-white">Action</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Discover how we transform businesses with powerful ERP solutions
+                </p>
+            </div>
+
+            <!-- Video Container with Flashy Design -->
+            <div class="relative max-w-5xl mx-auto" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 hover:border-[#60a5fa] transition-all duration-500 pulse-glow">
+                    <!-- Video Player -->
+                    <div class="relative bg-black aspect-video">
+                        <!-- HTML5 Video Player -->
+                        <video 
+                            id="heroVideo" 
+                            class="w-full h-full object-cover" 
+                            controls
+                            autoplay
+                            preload="auto"
+                            playsinline
+                        >
+                            <source src="Video1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        
+                        <!-- Custom Play Button Overlay (hidden when video is playing) -->
+                        <div id="playButtonOverlay" class="absolute inset-0 flex items-center justify-center bg-black/40 hover:bg-black/20 transition-all duration-300 cursor-pointer group">
+                            <div class="relative">
+                                <div class="w-24 h-24 bg-white/90 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300 pulse-glow">
+                                    <svg class="w-12 h-12 text-[#1e3a8a] ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M8 5v14l11-7z"/>
+                                    </svg>
+                                </div>
+                                <!-- Animated Rings -->
+                                <div class="absolute inset-0 w-24 h-24 border-4 border-white/30 rounded-full animate-ping"></div>
+                                <div class="absolute inset-0 w-24 h-24 border-2 border-white/50 rounded-full animate-pulse"></div>
+                            </div>
+                        </div>
+
+                        <!-- Video Info Overlay (positioned to not interfere with YouTube controls) -->
+                        <div class="absolute bottom-16 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 pointer-events-none">
+                            <h3 class="text-white text-xl font-bold mb-2">Transform Your Business with Odoo</h3>
+                            <p class="text-gray-300 text-sm">See how our ERP solutions drive efficiency and growth</p>
+                        </div>
+                        
+                        <!-- Instructions: To use your own video, replace the YouTube video ID above -->
+                        <!-- Get video ID from YouTube URL: https://www.youtube.com/watch?v=VIDEO_ID -->
+                        <!-- Replace "dQw4w9WgXcQ" with your video ID in the iframe src -->
+                    </div>
+
+                    <!-- Decorative Elements -->
+                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-[#60a5fa] rounded-full opacity-20 blur-2xl animate-float"></div>
+                    <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-600 rounded-full opacity-20 blur-2xl animate-float-delayed"></div>
+                </div>
+
+                <!-- Stats Below Video -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover-lift">
+                        <div class="text-4xl font-bold text-white mb-2">500+</div>
+                        <div class="text-gray-300 text-sm">Successful Implementations</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover-lift">
+                        <div class="text-4xl font-bold text-white mb-2">98%</div>
+                        <div class="text-gray-300 text-sm">Client Satisfaction</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/20 transition-all duration-300 hover-lift">
+                        <div class="text-4xl font-bold text-white mb-2">24/7</div>
+                        <div class="text-gray-300 text-sm">Support Available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="py-12 bg-blue-50 border-y border-blue-100 overflow-hidden">
+        <div class="marquee-container opacity-50 grayscale hover:grayscale-0 transition duration-500">
+            <div class="marquee-content flex gap-12 items-center">
+                <span class="text-xl font-bold mx-8">CRM</span>
+                <span class="text-xl font-bold mx-8">Accounting</span>
+                <span class="text-xl font-bold mx-8">Inventory</span>
+                <span class="text-xl font-bold mx-8">Manufacturing</span>
+                <span class="text-xl font-bold mx-8">eCommerce</span>
+                <span class="text-xl font-bold mx-8">HR & Payroll</span>
+                <span class="text-xl font-bold mx-8">Project Management</span>
+                <span class="text-xl font-bold mx-8">Marketing Automation</span>
+                <span class="text-xl font-bold mx-8">CRM</span>
+                <span class="text-xl font-bold mx-8">Accounting</span>
+                <span class="text-xl font-bold mx-8">Inventory</span>
+                <span class="text-xl font-bold mx-8">Manufacturing</span>
+                <span class="text-xl font-bold mx-8">eCommerce</span>
+                <span class="text-xl font-bold mx-8">HR & Payroll</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabbed Content Section -->
+    <section class="py-20 max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <span class="text-[#1e3a8a] font-bold tracking-wider uppercase text-xs">Explore Our Solutions</span>
+            <h2 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">Everything You Need</h2>
+            <p class="text-gray-500 max-w-2xl mx-auto">Discover our comprehensive range of Odoo services and solutions</p>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12" data-aos="fade-up" data-aos-delay="100">
+            <button class="tab-btn px-6 py-3 rounded-full font-medium transition-all duration-300 bg-[#1e3a8a] text-white shadow-lg hover:shadow-xl" data-tab="implementation">
+                Implementation
+            </button>
+            <button class="tab-btn px-6 py-3 rounded-full font-medium transition-all duration-300 bg-blue-50 text-[#1e3a8a] hover:bg-blue-100" data-tab="customization">
+                Customization
+            </button>
+            <button class="tab-btn px-6 py-3 rounded-full font-medium transition-all duration-300 bg-blue-50 text-[#1e3a8a] hover:bg-blue-100" data-tab="support">
+                Support
+            </button>
+            <button class="tab-btn px-6 py-3 rounded-full font-medium transition-all duration-300 bg-blue-50 text-[#1e3a8a] hover:bg-blue-100" data-tab="training">
+                Training
+            </button>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="relative" data-aos="fade-up" data-aos-delay="200">
+            <!-- Implementation Tab -->
+            <div id="tab-implementation" class="tab-content">
+                <div class="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 lg:p-12 shadow-lg border border-blue-100">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1e3a8a] text-white text-sm font-bold mb-4">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Complete Implementation
+                            </div>
+                            <h3 class="text-3xl font-bold mb-4 text-gray-900">End-to-End Odoo Implementation</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                From initial planning to go-live, we handle every aspect of your Odoo implementation. Our certified consultants ensure a smooth transition with zero business disruption.
+                            </p>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-[#1e3a8a] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Business process analysis and mapping</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-[#1e3a8a] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Module configuration and setup</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-[#1e3a8a] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Data migration with validation</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-[#1e3a8a] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Testing and quality assurance</span>
+                                </li>
+                            </ul>
+                            <a href="services.html" class="inline-flex items-center gap-2 px-6 py-3 bg-[#1e3a8a] text-white rounded-full font-medium hover:bg-[#1e40af] transition">
+                                Learn More
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="bg-gradient-to-br from-[#1e3a8a] to-[#3b82f6] rounded-2xl p-8 text-white">
+                                <div class="text-5xl font-bold mb-2">100%</div>
+                                <div class="text-xl mb-4">Successful Go-Lives</div>
+                                <div class="text-sm opacity-90">Zero-downtime implementations with comprehensive testing</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customization Tab -->
+            <div id="tab-customization" class="tab-content hidden">
+                <div class="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 lg:p-12 shadow-lg border border-blue-100">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1e3a8a] text-white text-sm font-bold mb-4">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg>
+                                Custom Development
+                            </div>
+                            <h3 class="text-3xl font-bold mb-4 text-gray-900">Tailored Solutions for Your Business</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Need features that don't exist in standard Odoo? Our Python developers build custom modules and integrations that perfectly match your workflow.
+                            </p>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-[#1e3a8a] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Python module development</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-[#1e3a8a] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">API integrations with third-party systems</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-[#1e3a8a] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Workflow automation</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-[#1e3a8a] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Custom reporting and dashboards</span>
+                                </li>
+                            </ul>
+                            <a href="services.html" class="inline-flex items-center gap-2 px-6 py-3 bg-[#1e3a8a] text-white rounded-full font-medium hover:bg-[#1e40af] transition">
+                                Learn More
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="bg-gradient-to-br from-[#3b82f6] to-[#60a5fa] rounded-2xl p-8 text-white">
+                                <div class="text-5xl font-bold mb-2">50+</div>
+                                <div class="text-xl mb-4">Custom Modules Built</div>
+                                <div class="text-sm opacity-90">Unique solutions tailored to client needs</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Tab -->
+            <div id="tab-support" class="tab-content hidden">
+                <div class="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 lg:p-12 shadow-lg border border-blue-100">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1e3a8a] text-white text-sm font-bold mb-4">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                </svg>
+                                24/7 Support
+                            </div>
+                            <h3 class="text-3xl font-bold mb-4 text-gray-900">Dedicated Support When You Need It</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Direct access to senior Odoo consultants via Slack or phone. No ticketing queues. Fast response times for critical issues.
+                            </p>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-[#1e3a8a] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Priority support channels</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-[#1e3a8a] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">System monitoring and maintenance</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-[#1e3a8a] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Performance optimization</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-[#1e3a8a] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Regular updates and patches</span>
+                                </li>
+                            </ul>
+                            <a href="contact.html" class="inline-flex items-center gap-2 px-6 py-3 bg-[#1e3a8a] text-white rounded-full font-medium hover:bg-[#1e40af] transition">
+                                Get Support
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="bg-gradient-to-br from-[#60a5fa] to-[#93c5fd] rounded-2xl p-8 text-white">
+                                <div class="text-5xl font-bold mb-2">&lt;2hrs</div>
+                                <div class="text-xl mb-4">Average Response Time</div>
+                                <div class="text-sm opacity-90">Critical issues addressed within 2 hours</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Training Tab -->
+            <div id="tab-training" class="tab-content hidden">
+                <div class="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 lg:p-12 shadow-lg border border-blue-100">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1e3a8a] text-white text-sm font-bold mb-4">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                                Comprehensive Training
+                            </div>
+                            <h3 class="text-3xl font-bold mb-4 text-gray-900">Train Your Team for Success</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Comprehensive training programs ensure your team is comfortable and productive with Odoo from day one. Role-based training tailored to each user's needs.
+                            </p>
+                            <ul class="space-y-3 mb-6">
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-[#1e3a8a] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Role-based training programs</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-[#1e3a8a] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Comprehensive documentation and guides</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-[#1e3a8a] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Ongoing workshops and webinars</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-6 h-6 text-[#1e3a8a] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span class="text-gray-700">Video tutorials and knowledge base</span>
+                                </li>
+                            </ul>
+                            <a href="services.html" class="inline-flex items-center gap-2 px-6 py-3 bg-[#1e3a8a] text-white rounded-full font-medium hover:bg-[#1e40af] transition">
+                                Learn More
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="bg-gradient-to-br from-[#1e3a8a] to-[#60a5fa] rounded-2xl p-8 text-white">
+                                <div class="text-5xl font-bold mb-2">1000+</div>
+                                <div class="text-xl mb-4">Users Trained</div>
+                                <div class="text-sm opacity-90">Empowering teams across organizations</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 max-w-7xl mx-auto px-6">
+        <div class="relative rounded-[3rem] overflow-hidden gradient-animated text-white text-center py-24 px-6" data-aos="zoom-in">
+            <div class="relative z-10">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 text-reveal">See the system in action.</h2>
+                <p class="text-gray-300 mb-8 max-w-2xl mx-auto slide-in-bottom">From manufacturing floors to sales dashboards, Odoo unifies your entire operation.</p>
+                <a href="contact.html" class="inline-block bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition hover-lift btn-ripple magnetic-btn">Request Demo Environment</a>
+            </div>
+            <div class="absolute inset-0 opacity-40">
+                
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#111] text-white pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-16">
+                <div>
+                    <img src="bp_logo.png" alt="Business Partner Tech Logo" class="h-12 w-auto mb-6 logo-footer">
+                    <p class="text-gray-400 max-w-xs">Helping modern companies scale with the world's best open-source ERP.</p>
+                </div>
+                <div class="flex gap-12 mt-8 md:mt-0">
+                    <div>
+                        <h4 class="font-bold mb-4">Company</h4>
+                        <ul class="text-gray-400 space-y-2 text-sm">
+                            <li class="stagger-item"><a href="about-us.html" class="hover:text-white transition">About Us</a></li>
+                            <li class="stagger-item"><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Services</h4>
+                        <ul class="text-gray-400 space-y-2 text-sm">
+                            <li class="stagger-item"><a href="services.html" class="hover:text-white transition">Implementation</a></li>
+                            <li class="stagger-item"><a href="services.html" class="hover:text-white transition">Migration</a></li>
+                            <li class="stagger-item"><a href="services.html" class="hover:text-white transition">Training</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between text-gray-500 text-xs">
+                <p>&copy; 2024 Business Partner Tech. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100,
+            duration: 1000,
+            easing: 'ease-out-cubic',
+        });
+
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements with fade-in classes
+        document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Video Play Button Handler
+        const video = document.getElementById('heroVideo');
+        const playButtonOverlay = document.getElementById('playButtonOverlay');
+        
+        if (video && playButtonOverlay) {
+            // Hide overlay when video starts playing
+            video.addEventListener('play', function() {
+                playButtonOverlay.style.display = 'none';
+            });
+            
+            // Show overlay when video is paused
+            video.addEventListener('pause', function() {
+                playButtonOverlay.style.display = 'flex';
+            });
+            
+            // Click overlay to play video
+            playButtonOverlay.addEventListener('click', function() {
+                video.play();
+            });
+            
+            // Hide overlay initially since video autoplays
+            playButtonOverlay.style.display = 'none';
+            
+            // Show overlay if video fails to autoplay
+            video.addEventListener('loadeddata', function() {
+                if (video.paused) {
+                    playButtonOverlay.style.display = 'flex';
+                }
+            });
+        }
+
+        // Tab Functionality
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.getAttribute('data-tab');
+
+                // Remove active class from all buttons
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('bg-[#1e3a8a]', 'text-white', 'shadow-lg');
+                    btn.classList.add('bg-blue-50', 'text-[#1e3a8a]');
+                });
+
+                // Add active class to clicked button
+                button.classList.remove('bg-blue-50', 'text-[#1e3a8a]');
+                button.classList.add('bg-[#1e3a8a]', 'text-white', 'shadow-lg');
+
+                // Hide all tab contents
+                tabContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+
+                // Show target tab content
+                const targetContent = document.getElementById(`tab-${targetTab}`);
+                if (targetContent) {
+                    targetContent.classList.remove('hidden');
+                    targetContent.classList.add('animate-fade-in');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

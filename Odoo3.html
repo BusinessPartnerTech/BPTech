@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Partner Tech - Odoo Implementation Experts</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Figtree', sans-serif; }
+        
+        /* Custom Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #714B67, #00E2C2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Marquee Animation */
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .hero-blob {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body class="bg-[#F9FAFB] text-gray-900 overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-[#714B67] rounded-lg flex items-center justify-center text-white font-bold">B</div>
+                <span class="font-bold text-xl tracking-tight">Business Partner Tech</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+                <a href="#services" class="hover:text-[#714B67] transition">Services</a>
+                <a href="#process" class="hover:text-[#714B67] transition">Our Process</a>
+                <a href="#about" class="hover:text-[#714B67] transition">About</a>
+                <a href="#pricing" class="hover:text-[#714B67] transition">Pricing</a>
+            </div>
+            <a href="#contact" class="bg-black text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#714B67] transition duration-300">
+                Book a Demo
+            </a>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="hero-blob bg-purple-300 w-96 h-96 rounded-full top-0 left-0 -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="hero-blob bg-teal-200 w-96 h-96 rounded-full bottom-0 right-0 translate-x-1/2 translate-y-1/2"></div>
+
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+            
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 border border-purple-100 text-[#714B67] text-xs font-bold mb-6">
+                    <span class="w-2 h-2 rounded-full bg-[#00E2C2]"></span>
+                    Certified Odoo Gold Partner
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6">
+                    ERP Solutions for <br>
+                    <span class="text-gradient italic">limitless growth.</span>
+                </h1>
+                <p class="text-lg text-gray-500 mb-8 max-w-md leading-relaxed">
+                    Stop wrestling with disconnected spreadsheets. We implement, customize, and support your Odoo ecosystem so you can focus on scaling.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#" class="px-8 py-4 bg-black text-white rounded-full font-medium hover:bg-gray-800 transition flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                        Start your Transformation
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                    <a href="#" class="px-8 py-4 bg-white text-gray-900 border border-gray-200 rounded-full font-medium hover:bg-gray-50 transition flex items-center justify-center">
+                        View Case Studies
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+                <div class="glass-card rounded-3xl p-6 relative z-10 max-w-md mx-auto lg:ml-auto">
+                    
+                    
+                    <div class="mt-4">
+                        <div class="flex justify-between items-end">
+                            <div>
+                                <p class="text-sm text-gray-500 font-medium uppercase tracking-wider">Status</p>
+                                <h3 class="text-2xl font-bold text-gray-900">Optimization Complete</h3>
+                            </div>
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex gap-3">
+                            <div class="h-2 w-full bg-gray-100 rounded-full overflow-hidden">
+                                <div class="h-full bg-[#714B67] w-[92%]"></div>
+                            </div>
+                            <span class="text-xs font-bold text-[#714B67]">92%</span>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2">Efficiency increased via Odoo Studio</p>
+                    </div>
+                </div>
+
+                <div class="absolute -top-12 -right-4 bg-white p-4 rounded-2xl shadow-xl z-20 animate-bounce" style="animation-duration: 3s;">
+                    <div class="flex items-center gap-3">
+                        <div class="bg-purple-100 p-2 rounded-lg">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold">Invoice #4022</p>
+                            <p class="text-[10px] text-green-500 font-bold">Paid Automatically</p>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="absolute -bottom-8 -left-8 bg-black text-white p-4 rounded-2xl shadow-xl z-20" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="flex items-center gap-3">
+                        
+                        <div>
+                            <p class="text-xs font-bold opacity-80">Inventory</p>
+                            <p class="text-sm font-bold">Synchronized</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="py-12 bg-white border-y border-gray-100 overflow-hidden">
+        <div class="marquee-container opacity-50 grayscale hover:grayscale-0 transition duration-500">
+            <div class="marquee-content flex gap-12 items-center">
+                <span class="text-xl font-bold mx-8">CRM</span>
+                <span class="text-xl font-bold mx-8">Accounting</span>
+                <span class="text-xl font-bold mx-8">Inventory</span>
+                <span class="text-xl font-bold mx-8">Manufacturing</span>
+                <span class="text-xl font-bold mx-8">eCommerce</span>
+                <span class="text-xl font-bold mx-8">HR & Payroll</span>
+                <span class="text-xl font-bold mx-8">Project Management</span>
+                <span class="text-xl font-bold mx-8">Marketing Automation</span>
+                <span class="text-xl font-bold mx-8">CRM</span>
+                <span class="text-xl font-bold mx-8">Accounting</span>
+                <span class="text-xl font-bold mx-8">Inventory</span>
+                <span class="text-xl font-bold mx-8">Manufacturing</span>
+                <span class="text-xl font-bold mx-8">eCommerce</span>
+                <span class="text-xl font-bold mx-8">HR & Payroll</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-[#714B67] font-bold tracking-wider uppercase text-xs">What We Offer</span>
+                <h2 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">Comprehensive Odoo Services</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">From initial consultation to ongoing support, we provide end-to-end solutions for your ERP needs.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Service 1 -->
+                <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="h-14 w-14 bg-gradient-to-br from-[#714B67] to-[#8B6B7F] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Odoo Implementation</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Complete end-to-end implementation of Odoo ERP. We handle everything from planning and configuration to data migration and go-live support.</p>
+                    <ul class="text-xs text-gray-400 space-y-1">
+                        <li class="flex items-center gap-2"><span class="text-[#714B67]">✓</span> Business process analysis</li>
+                        <li class="flex items-center gap-2"><span class="text-[#714B67]">✓</span> Module configuration</li>
+                        <li class="flex items-center gap-2"><span class="text-[#714B67]">✓</span> Data migration</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-14 w-14 bg-gradient-to-br from-[#00E2C2] to-[#00B8A3] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Custom Development</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Need a specific feature? We build custom Odoo modules using Python that fit your workflow perfectly. Tailored solutions for unique business requirements.</p>
+                    <ul class="text-xs text-gray-400 space-y-1">
+                        <li class="flex items-center gap-2"><span class="text-[#00E2C2]">✓</span> Python module development</li>
+                        <li class="flex items-center gap-2"><span class="text-[#00E2C2]">✓</span> API integrations</li>
+                        <li class="flex items-center gap-2"><span class="text-[#00E2C2]">✓</span> Workflow automation</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-14 w-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Odoo.sh Hosting</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Secure, managed hosting on Odoo.sh or AWS. We handle the backups, updates, and security so you can focus on your business.</p>
+                    <ul class="text-xs text-gray-400 space-y-1">
+                        <li class="flex items-center gap-2"><span class="text-purple-500">✓</span> Automated backups</li>
+                        <li class="flex items-center gap-2"><span class="text-purple-500">✓</span> SSL certificates</li>
+                        <li class="flex items-center gap-2"><span class="text-purple-500">✓</span> 99.9% uptime SLA</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="h-14 w-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Dedicated Support</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Direct access to a senior Odoo consultant via Slack or Phone. No ticketing queues. Fast response times for critical issues.</p>
+                    <ul class="text-xs text-gray-400 space-y-1">
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✓</span> Priority support channels</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✓</span> System monitoring</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✓</span> Performance optimization</li>
+                    </ul>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-14 w-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Training & Onboarding</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Comprehensive training programs for your team. We ensure everyone is comfortable and productive with the new system from day one.</p>
+                    <ul class="text-xs text-gray-400 space-y-1">
+                        <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> Role-based training</li>
+                        <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> Documentation & guides</li>
+                        <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> Ongoing workshops</li>
+                    </ul>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-14 w-14 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                        <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">System Migration</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Seamless migration from legacy systems to Odoo. We ensure zero data loss and minimal business disruption during the transition.</p>
+                    <ul class="text-xs text-gray-400 space-y-1">
+                        <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Data mapping & validation</li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Parallel run support</li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Cutover planning</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Process Section -->
+    <section id="process" class="py-24 bg-[#F9FAFB]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-[#714B67] font-bold tracking-wider uppercase text-xs">How We Work</span>
+                <h2 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">The way ERP <span class="italic text-gray-400">should</span> be done.</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">We replace expensive, fragmented systems with one unified solution. Our proven methodology ensures successful implementation every time.</p>
+            </div>
+
+            <!-- Process Steps -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                <!-- Step 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group relative" data-aos="fade-up" data-aos-delay="0">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-[#714B67] text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">1</div>
+                    <div class="h-12 w-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition duration-300 mt-4">
+                        <svg class="w-6 h-6 text-blue-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Discovery & Audit</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">We analyze your business workflows, pain points, and requirements. Our team maps your processes to Odoo's standard features to minimize customization costs.</p>
+                    <ul class="text-xs text-gray-400 space-y-2">
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600 mt-0.5">•</span>
+                            <span>Business process analysis</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600 mt-0.5">•</span>
+                            <span>Requirements gathering</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-blue-600 mt-0.5">•</span>
+                            <span>Gap analysis & recommendations</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-[#714B67] text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">2</div>
+                    <div class="h-12 w-12 bg-purple-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#714B67] transition duration-300 mt-4">
+                        <svg class="w-6 h-6 text-[#714B67] group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Design & Configure</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Our certified engineers configure your Odoo modules, set up workflows, and customize the system to match your business needs. We build custom modules when needed.</p>
+                    <ul class="text-xs text-gray-400 space-y-2">
+                        <li class="flex items-start gap-2">
+                            <span class="text-[#714B67] mt-0.5">•</span>
+                            <span>Module configuration</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-[#714B67] mt-0.5">•</span>
+                            <span>Custom development</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-[#714B67] mt-0.5">•</span>
+                            <span>Integration setup</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group relative" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-[#714B67] text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">3</div>
+                    <div class="h-12 w-12 bg-teal-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-teal-500 transition duration-300 mt-4">
+                        <svg class="w-6 h-6 text-teal-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Migrate & Test</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">We migrate your data with zero downtime, perform comprehensive testing, and ensure everything works perfectly before go-live. Your business continues uninterrupted.</p>
+                    <ul class="text-xs text-gray-400 space-y-2">
+                        <li class="flex items-start gap-2">
+                            <span class="text-teal-600 mt-0.5">•</span>
+                            <span>Data migration & validation</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-teal-600 mt-0.5">•</span>
+                            <span>User acceptance testing</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-teal-600 mt-0.5">•</span>
+                            <span>Performance optimization</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group relative" data-aos="fade-up" data-aos-delay="300">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-[#714B67] text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">4</div>
+                    <div class="h-12 w-12 bg-green-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-500 transition duration-300 mt-4">
+                        <svg class="w-6 h-6 text-green-600 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Launch & Support</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">We provide hands-on training for your team, manage the go-live process, and offer ongoing support to ensure you scale smoothly and maximize ROI.</p>
+                    <ul class="text-xs text-gray-400 space-y-2">
+                        <li class="flex items-start gap-2">
+                            <span class="text-green-600 mt-0.5">•</span>
+                            <span>Team training & onboarding</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-green-600 mt-0.5">•</span>
+                            <span>Go-live support</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-green-600 mt-0.5">•</span>
+                            <span>Ongoing maintenance</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Process Timeline Visual -->
+            <div class="bg-white rounded-3xl p-12 border border-gray-100 shadow-sm" data-aos="fade-up" data-aos-delay="400">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="flex-1 text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                        </div>
+                        <h4 class="font-bold mb-2">Week 1-2</h4>
+                        <p class="text-sm text-gray-500">Discovery & Planning</p>
+                    </div>
+                    <div class="hidden md:block flex-1 h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
+                    <div class="flex-1 text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        </div>
+                        <h4 class="font-bold mb-2">Week 3-6</h4>
+                        <p class="text-sm text-gray-500">Development & Configuration</p>
+                    </div>
+                    <div class="hidden md:block flex-1 h-1 bg-gradient-to-r from-purple-500 to-teal-500"></div>
+                    <div class="flex-1 text-center">
+                        <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h4 class="font-bold mb-2">Week 7-8</h4>
+                        <p class="text-sm text-gray-500">Testing & Migration</p>
+                    </div>
+                    <div class="hidden md:block flex-1 h-1 bg-gradient-to-r from-teal-500 to-green-500"></div>
+                    <div class="flex-1 text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        </div>
+                        <h4 class="font-bold mb-2">Week 9+</h4>
+                        <p class="text-sm text-gray-500">Launch & Ongoing Support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 max-w-7xl mx-auto px-6">
+        <div class="relative rounded-[3rem] overflow-hidden bg-black text-white text-center py-24 px-6" data-aos="zoom-in">
+            <div class="relative z-10">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">See the system in action.</h2>
+                <p class="text-gray-300 mb-8 max-w-2xl mx-auto">From manufacturing floors to sales dashboards, Odoo unifies your entire operation.</p>
+                <button class="bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition">Request Demo Environment</button>
+            </div>
+            <div class="absolute inset-0 opacity-40">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Our Team Section -->
+            <div class="max-w-4xl mx-auto mb-20" data-aos="fade-up">
+                <div class="text-center mb-12">
+                    <span class="text-[#714B67] font-bold tracking-wider uppercase text-xs">Our Team</span>
+                    <h2 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">A Dynamic Combination</h2>
+                </div>
+                <div class="bg-gradient-to-br from-gray-50 to-white p-10 rounded-3xl border border-gray-100 shadow-sm">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        Our team comprises of well-trained, eager young calibers and seasoned veterans who know the drill. We are driven towards growth.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        This potent and dynamic combination enables us to forge strategic alliances with partners and clients and make a difference by establishing and improving the effectiveness, allowing the partnerships to ultimately creating value.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        We bridge the gap between the high-level strategies and on the ground executions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Field Solutions Overview -->
+            <div class="mb-20">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <span class="text-[#714B67] font-bold tracking-wider uppercase text-xs">Our Company</span>
+                    <h2 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">Field Solutions</h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">A Vision to Innovate the Future – On Ground Execution, Strategic Growth, Local Expertise</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
+                    <div data-aos="fade-right">
+                        <div class="space-y-6 text-gray-700 leading-relaxed">
+                            <p class="text-lg">
+                                Established in 2020, Field Solutions Group stands as a prominent Saudi-based entity specializing in sales and business development solutions, dedicated to enabling clients in accomplishing their targets and organizational aspirations.
+                            </p>
+                            <p class="text-lg">
+                                The Company was born with a vision to empower partners for excellence and prominence in the rapidly evolving market.
+                            </p>
+                            <p class="text-lg">
+                                Our platform facilitates seamless execution of short-term missions and long-term strategies, addressing the intricate demands of marketing, sales, business development, networking, and training activities across various sectors.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6" data-aos="fade-left" data-aos-delay="200">
+                        <div class="bg-gradient-to-br from-[#714B67] to-[#8B6B7F] p-8 rounded-3xl shadow-sm text-white text-center">
+                            <div class="text-5xl font-bold mb-2">3</div>
+                            <div class="text-sm font-medium opacity-90">Regional Offices</div>
+                        </div>
+                        <div class="bg-gradient-to-br from-[#00E2C2] to-[#00B8A3] p-8 rounded-3xl shadow-sm text-white text-center">
+                            <div class="text-5xl font-bold mb-2">22+</div>
+                            <div class="text-sm font-medium opacity-90">Cities Presence</div>
+                        </div>
+                        <div class="bg-gradient-to-br from-purple-500 to-purple-600 p-8 rounded-3xl shadow-sm text-white text-center col-span-2">
+                            <div class="text-3xl font-bold mb-2">2020</div>
+                            <div class="text-sm font-medium opacity-90">Established</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-[#714B67] to-[#8B6B7F] rounded-3xl p-10 text-white" data-aos="fade-up" data-aos-delay="300">
+                    <p class="text-xl leading-relaxed text-center max-w-4xl mx-auto">
+                        With 3 regional offices and presence in 22+ cities, we aim to penetrate new markets, increase market share, and support partners in navigating the complexities of the region's business environment.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Message from Founder -->
+            <div class="mb-20">
+                <div class="max-w-4xl mx-auto" data-aos="fade-up">
+                    <div class="text-center mb-12">
+                        <span class="text-[#714B67] font-bold tracking-wider uppercase text-xs">Leadership</span>
+                        <h2 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">Message from the Founder and CEO</h2>
+                    </div>
+                    <div class="bg-gradient-to-br from-gray-50 to-white p-12 rounded-3xl border border-gray-100 shadow-lg relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-purple-100 rounded-full -translate-y-1/2 translate-x-1/2 opacity-20"></div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-20 h-20 bg-gradient-to-br from-[#714B67] to-[#8B6B7F] rounded-full flex items-center justify-center text-white text-2xl font-bold">
+                                    OW
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-gray-900">Mr. Omar Waked</h3>
+                                    <p class="text-gray-600">Founder & CEO</p>
+                                </div>
+                            </div>
+                            <div class="border-l-4 border-[#714B67] pl-6 text-gray-700 leading-relaxed">
+                                <p class="text-lg italic">
+                                    "Our commitment is to bridge the gap between vision and execution, empowering our partners to achieve excellence in an ever-evolving market landscape."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Management Team -->
+            <div>
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-[#714B67] font-bold tracking-wider uppercase text-xs">Leadership Team</span>
+                    <h2 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">Our Management Team</h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto">Experienced leaders driving innovation and excellence across all sectors.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Team Member 1 -->
+                    <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="0">
+                        <div class="w-20 h-20 bg-gradient-to-br from-[#714B67] to-[#8B6B7F] rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6 mx-auto group-hover:scale-110 transition duration-300">
+                            AA
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Abdulla Alyami</h3>
+                        <p class="text-gray-600 text-center text-sm">Chief of Legal & Human Capital</p>
+                    </div>
+
+                    <!-- Team Member 2 -->
+                    <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-20 h-20 bg-gradient-to-br from-[#00E2C2] to-[#00B8A3] rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6 mx-auto group-hover:scale-110 transition duration-300">
+                            WE
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Wail Elhassan</h3>
+                        <p class="text-gray-600 text-center text-sm">GM Consumer Sector</p>
+                    </div>
+
+                    <!-- Team Member 3 -->
+                    <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6 mx-auto group-hover:scale-110 transition duration-300">
+                            EE
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Elsayed Elbialy</h3>
+                        <p class="text-gray-600 text-center text-sm">GM Enterprise & Operations</p>
+                    </div>
+
+                    <!-- Team Member 4 -->
+                    <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="0">
+                        <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6 mx-auto group-hover:scale-110 transition duration-300">
+                            AT
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Ahmed Toubar</h3>
+                        <p class="text-gray-600 text-center text-sm">Development & Business Finance Director</p>
+                    </div>
+
+                    <!-- Team Member 5 -->
+                    <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6 mx-auto group-hover:scale-110 transition duration-300">
+                            MA
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Mohamed Abdelsalam</h3>
+                        <p class="text-gray-600 text-center text-sm">Head of Corporate Affairs</p>
+                    </div>
+
+                    <!-- Team Member 6 -->
+                    <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6 mx-auto group-hover:scale-110 transition duration-300">
+                            AM
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Amr Miri</h3>
+                        <p class="text-gray-600 text-center text-sm">Chief Strategy Officer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#111] text-white pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start mb-16">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Business Partner Tech</h2>
+                    <p class="text-gray-400 max-w-xs">Helping modern companies scale with the world's best open-source ERP.</p>
+                </div>
+                <div class="flex gap-12 mt-8 md:mt-0">
+                    <div>
+                        <h4 class="font-bold mb-4">Company</h4>
+                        <ul class="text-gray-400 space-y-2 text-sm">
+                            <li><a href="#about" class="hover:text-white">About</a></li>
+                            <li><a href="#" class="hover:text-white">Careers</a></li>
+                            <li><a href="#" class="hover:text-white">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold mb-4">Services</h4>
+                        <ul class="text-gray-400 space-y-2 text-sm">
+                            <li><a href="#services" class="hover:text-white">Implementation</a></li>
+                            <li><a href="#services" class="hover:text-white">Migration</a></li>
+                            <li><a href="#services" class="hover:text-white">Training</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between text-gray-500 text-xs">
+                <p>&copy; 2024 Business Partner Tech. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100,
+        });
+    </script>
+</body>
+</html>
