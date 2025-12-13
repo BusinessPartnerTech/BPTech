@@ -1,164 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Business Partner Tech</title>
+    <title>الخدمات - Business Partner Tech</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;600;800&family=Cairo:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body { font-family: 'Cairo', 'Figtree', sans-serif; }
+    </style>
 </head>
 <body class="bg-[#EFF6FF] text-gray-900 overflow-x-hidden">
 
     <nav class="fixed w-full z-50 bg-blue-50/90 backdrop-blur-md border-b border-blue-100">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Menu Icon on Left -->
             <button id="menuToggle" class="md:hidden flex items-center justify-center w-10 h-10 text-gray-600 hover:text-[#1e3a8a] transition">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
             
-            <a href="home.html" class="flex items-center gap-3">
-                <img src="bp_logo.png" alt="Business Partner Tech Logo" class="h-10 w-auto logo-nav">
+            <a href="home-ar.html" class="flex items-center gap-3">
+                <img src="bp_logo.png" alt="شعار Business Partner Tech" class="h-10 w-auto logo-nav">
             </a>
             <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
-                <a href="home.html" class="hover:text-[#1e3a8a] transition">Home</a>
-                <a href="services.html" class="hover:text-[#1e3a8a] transition text-[#1e3a8a] font-semibold">Services</a>
-                <a href="process.html" class="hover:text-[#1e3a8a] transition">Our Process</a>
-                <a href="about-us.html" class="hover:text-[#1e3a8a] transition">About Us</a>
-                <a href="contact.html" class="hover:text-[#1e3a8a] transition">Contact Us</a>
+                <a href="home-ar.html" class="hover:text-[#1e3a8a] transition">الرئيسية</a>
+                <a href="services-ar.html" class="hover:text-[#1e3a8a] transition text-[#1e3a8a] font-semibold">الخدمات</a>
+                <a href="process-ar.html" class="hover:text-[#1e3a8a] transition">عملنا</a>
+                <a href="about-us-ar.html" class="hover:text-[#1e3a8a] transition">من نحن</a>
+                <a href="contact-ar.html" class="hover:text-[#1e3a8a] transition">اتصل بنا</a>
             </div>
             <div class="flex items-center gap-4">
-                <!-- Language Switcher -->
                 <div class="flex items-center gap-2 bg-blue-50 rounded-full px-3 py-1.5 border border-blue-100">
-                    <a href="services.html" class="text-[#1e3a8a] font-semibold text-xs px-2">EN</a>
+                    <a href="services.html" class="text-gray-500 hover:text-[#1e3a8a] transition text-xs px-2">EN</a>
                     <span class="text-blue-300">|</span>
-                    <a href="services-ar.html" class="text-gray-500 hover:text-[#1e3a8a] transition text-xs px-2">AR</a>
+                    <a href="services-ar.html" class="text-[#1e3a8a] font-semibold text-xs px-2">AR</a>
                 </div>
-                <a href="contact.html" class="bg-black text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#1e3a8a] transition duration-300 btn-ripple magnetic-btn hover-lift">
-                    Book a Demo
+                <a href="contact-ar.html" class="bg-black text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#1e3a8a] transition duration-300 btn-ripple magnetic-btn hover-lift">
+                    احجز عرض تجريبي
                 </a>
             </div>
         </div>
         
-        <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-blue-50 border-t border-blue-100">
             <div class="px-6 py-4 space-y-4">
-                <a href="home.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">Home</a>
-                <a href="services.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition text-[#1e3a8a] font-semibold">Services</a>
-                <a href="process.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">Our Process</a>
-                <a href="about-us.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">About Us</a>
-                <a href="contact.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">Contact Us</a>
+                <a href="home-ar.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">الرئيسية</a>
+                <a href="services-ar.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition text-[#1e3a8a] font-semibold">الخدمات</a>
+                <a href="process-ar.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">عملنا</a>
+                <a href="about-us-ar.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">من نحن</a>
+                <a href="contact-ar.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">اتصل بنا</a>
                 <div class="pt-4 border-t border-blue-100">
                     <div class="flex items-center gap-2">
-                        <span class="text-xs text-gray-500">Language:</span>
-                        <a href="services.html" class="text-[#1e3a8a] font-semibold text-xs">EN</a>
+                        <span class="text-xs text-gray-500">اللغة:</span>
+                        <a href="services.html" class="text-gray-500 hover:text-[#1e3a8a] transition text-xs">EN</a>
                         <span class="text-blue-300">|</span>
-                        <a href="services-ar.html" class="text-gray-500 hover:text-[#1e3a8a] transition text-xs">AR</a>
+                        <a href="services-ar.html" class="text-[#1e3a8a] font-semibold text-xs">AR</a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Enhanced Services Section -->
     <section class="py-24 bg-blue-50 mt-20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
-                <span class="text-[#1e3a8a] font-bold tracking-wider uppercase text-xs">What We Offer</span>
-                <h2 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">Comprehensive Odoo Services</h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">From initial consultation to ongoing support, we provide end-to-end solutions for your ERP needs.</p>
+                <span class="text-[#1e3a8a] font-bold tracking-wider uppercase text-xs">ما نقدمه</span>
+                <h2 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">خدمات Odoo الشاملة</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">من الاستشارة الأولية إلى الدعم المستمر، نقدم حلولاً شاملة من البداية للنهاية لاحتياجات ERP الخاصة بك.</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                <!-- Service 1 -->
                 <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group card-3d hover-lift" data-aos="fade-up" data-aos-delay="0">
                     <div class="h-14 w-14 bg-gradient-to-br from-[#1e3a8a] to-[#3b82f6] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300 icon-spin">
                         <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Odoo Implementation</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Complete end-to-end implementation of Odoo ERP. We handle everything from planning and configuration to data migration and go-live support.</p>
+                    <h3 class="text-xl font-bold mb-3">تنفيذ Odoo</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">تنفيذ كامل من البداية للنهاية لنظام Odoo ERP. نتعامل مع كل شيء من التخطيط والتكوين إلى نقل البيانات ودعم التشغيل.</p>
                     <ul class="text-xs text-gray-400 space-y-1">
-                        <li class="flex items-center gap-2"><span class="text-[#1e3a8a]">✓</span> Business process analysis</li>
-                        <li class="flex items-center gap-2"><span class="text-[#1e3a8a]">✓</span> Module configuration</li>
-                        <li class="flex items-center gap-2"><span class="text-[#1e3a8a]">✓</span> Data migration</li>
+                        <li class="flex items-center gap-2"><span class="text-[#1e3a8a]">✓</span> تحليل عمليات الأعمال</li>
+                        <li class="flex items-center gap-2"><span class="text-[#1e3a8a]">✓</span> تكوين الوحدات</li>
+                        <li class="flex items-center gap-2"><span class="text-[#1e3a8a]">✓</span> نقل البيانات</li>
                     </ul>
                 </div>
 
-                <!-- Service 2 -->
                 <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="100">
                     <div class="h-14 w-14 bg-gradient-to-br from-[#60a5fa] to-[#3b82f6] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
                         <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Custom Development</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Need a specific feature? We build custom Odoo modules using Python that fit your workflow perfectly. Tailored solutions for unique business requirements.</p>
+                    <h3 class="text-xl font-bold mb-3">التطوير المخصص</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">تحتاج ميزة محددة؟ نبني وحدات Odoo مخصصة باستخدام Python تناسب سير عملك تماماً. حلول مصممة خصيصاً لمتطلبات الأعمال الفريدة.</p>
                     <ul class="text-xs text-gray-400 space-y-1">
-                        <li class="flex items-center gap-2"><span class="text-[#60a5fa]">✓</span> Python module development</li>
-                        <li class="flex items-center gap-2"><span class="text-[#60a5fa]">✓</span> API integrations</li>
-                        <li class="flex items-center gap-2"><span class="text-[#60a5fa]">✓</span> Workflow automation</li>
+                        <li class="flex items-center gap-2"><span class="text-[#60a5fa]">✓</span> تطوير وحدات Python</li>
+                        <li class="flex items-center gap-2"><span class="text-[#60a5fa]">✓</span> تكاملات API</li>
+                        <li class="flex items-center gap-2"><span class="text-[#60a5fa]">✓</span> أتمتة سير العمل</li>
                     </ul>
                 </div>
 
-                <!-- Service 3 -->
                 <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="200">
                     <div class="h-14 w-14 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
                         <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Odoo.sh Hosting</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Secure, managed hosting on Odoo.sh or AWS. We handle the backups, updates, and security so you can focus on your business.</p>
+                    <h3 class="text-xl font-bold mb-3">استضافة Odoo.sh</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">استضافة آمنة ومدارة على Odoo.sh أو AWS. نحن نتعامل مع النسخ الاحتياطي والتحديثات والأمان حتى تتمكن من التركيز على عملك.</p>
                     <ul class="text-xs text-gray-400 space-y-1">
-                        <li class="flex items-center gap-2"><span class="text-blue-600">✓</span> Automated backups</li>
-                        <li class="flex items-center gap-2"><span class="text-blue-600">✓</span> SSL certificates</li>
-                        <li class="flex items-center gap-2"><span class="text-blue-600">✓</span> 99.9% uptime SLA</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-600">✓</span> النسخ الاحتياطي التلقائي</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-600">✓</span> شهادات SSL</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-600">✓</span> SLA بنسبة 99.9% للوقت المتاح</li>
                     </ul>
                 </div>
 
-                <!-- Service 4 -->
                 <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group card-3d hover-lift" data-aos="fade-up" data-aos-delay="0">
                     <div class="h-14 w-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
                         <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Dedicated Support</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Direct access to a senior Odoo consultant via Slack or Phone. No ticketing queues. Fast response times for critical issues.</p>
+                    <h3 class="text-xl font-bold mb-3">دعم مخصص</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">وصول مباشر إلى مستشار Odoo كبير عبر Slack أو الهاتف. لا توجد قوائم انتظار للتذاكر. أوقات استجابة سريعة للمشاكل الحرجة.</p>
                     <ul class="text-xs text-gray-400 space-y-1">
-                        <li class="flex items-center gap-2"><span class="text-blue-500">✓</span> Priority support channels</li>
-                        <li class="flex items-center gap-2"><span class="text-blue-500">✓</span> System monitoring</li>
-                        <li class="flex items-center gap-2"><span class="text-blue-500">✓</span> Performance optimization</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✓</span> قنوات دعم ذات أولوية</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✓</span> مراقبة النظام</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-500">✓</span> تحسين الأداء</li>
                     </ul>
                 </div>
 
-                <!-- Service 5 -->
                 <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="100">
                     <div class="h-14 w-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
                         <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Training & Onboarding</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Comprehensive training programs for your team. We ensure everyone is comfortable and productive with the new system from day one.</p>
+                    <h3 class="text-xl font-bold mb-3">التدريب والاندماج</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">برامج تدريب شاملة لفريقك. نضمن أن الجميع مرتاحون ومنتجون مع النظام الجديد من اليوم الأول.</p>
                     <ul class="text-xs text-gray-400 space-y-1">
-                        <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> Role-based training</li>
-                        <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> Documentation & guides</li>
-                        <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> Ongoing workshops</li>
+                        <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> تدريب قائم على الأدوار</li>
+                        <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> الوثائق والأدلة</li>
+                        <li class="flex items-center gap-2"><span class="text-orange-500">✓</span> ورش عمل مستمرة</li>
                     </ul>
                 </div>
 
-                <!-- Service 6 -->
                 <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="200">
                     <div class="h-14 w-14 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
                         <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">System Migration</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed mb-4">Seamless migration from legacy systems to Odoo. We ensure zero data loss and minimal business disruption during the transition.</p>
+                    <h3 class="text-xl font-bold mb-3">ترحيل النظام</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-4">ترحيل سلس من الأنظمة القديمة إلى Odoo. نضمن عدم فقدان البيانات وتعطيل الأعمال بأدنى حد أثناء الانتقال.</p>
                     <ul class="text-xs text-gray-400 space-y-1">
-                        <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Data mapping & validation</li>
-                        <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Parallel run support</li>
-                        <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Cutover planning</li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✓</span> تعيين البيانات والتحقق</li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✓</span> دعم التشغيل المتوازي</li>
+                        <li class="flex items-center gap-2"><span class="text-green-500">✓</span> تخطيط القطع</li>
                     </ul>
                 </div>
             </div>
@@ -169,32 +162,32 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-start mb-16">
                 <div>
-                    <img src="bp_logo.png" alt="Business Partner Tech Logo" class="h-12 w-auto mb-6 logo-footer">
-                    <p class="text-gray-400 max-w-xs">Helping modern companies scale with the world's best open-source ERP.</p>
+                    <img src="bp_logo.png" alt="شعار Business Partner Tech" class="h-12 w-auto mb-6 logo-footer">
+                    <p class="text-gray-400 max-w-xs">مساعدة الشركات الحديثة على التوسع مع أفضل نظام ERP مفتوح المصدر في العالم.</p>
                 </div>
                 <div class="flex gap-12 mt-8 md:mt-0">
                     <div>
-                        <h4 class="font-bold mb-4">Company</h4>
+                        <h4 class="font-bold mb-4">الشركة</h4>
                         <ul class="text-gray-400 space-y-2 text-sm">
-                            <li class="stagger-item"><a href="about-us.html" class="hover:text-white transition">About Us</a></li>
-                            <li class="stagger-item"><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+                            <li class="stagger-item"><a href="about-us-ar.html" class="hover:text-white transition">من نحن</a></li>
+                            <li class="stagger-item"><a href="contact-ar.html" class="hover:text-white transition">اتصل بنا</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-bold mb-4">Services</h4>
+                        <h4 class="font-bold mb-4">الخدمات</h4>
                         <ul class="text-gray-400 space-y-2 text-sm">
-                            <li class="stagger-item"><a href="services.html" class="hover:text-white transition">Implementation</a></li>
-                            <li class="stagger-item"><a href="services.html" class="hover:text-white transition">Migration</a></li>
-                            <li class="stagger-item"><a href="services.html" class="hover:text-white transition">Training</a></li>
+                            <li class="stagger-item"><a href="services-ar.html" class="hover:text-white transition">التنفيذ</a></li>
+                            <li class="stagger-item"><a href="services-ar.html" class="hover:text-white transition">الترحيل</a></li>
+                            <li class="stagger-item"><a href="services-ar.html" class="hover:text-white transition">التدريب</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between text-gray-500 text-xs">
-                <p>&copy; 2024 Business Partner Tech. All rights reserved.</p>
+                <p>&copy; 2024 Business Partner Tech. جميع الحقوق محفوظة.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <a href="#">سياسة الخصوصية</a>
+                    <a href="#">شروط الخدمة</a>
                 </div>
             </div>
         </div>
@@ -209,13 +202,11 @@
             easing: 'ease-out-cubic',
         });
 
-        // Mobile menu toggle
         document.getElementById('menuToggle').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobileMenu');
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
@@ -225,7 +216,6 @@
             }
         });
 
-        // Intersection Observer for fade-in animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'

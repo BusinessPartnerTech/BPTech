@@ -1,162 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Business Partner Tech</title>
+    <title>من نحن - Business Partner Tech</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;600;800&family=Cairo:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body { font-family: 'Cairo', 'Figtree', sans-serif; }
+    </style>
 </head>
 <body class="bg-[#EFF6FF] text-gray-900 overflow-x-hidden">
 
     <nav class="fixed w-full z-50 bg-blue-50/90 backdrop-blur-md border-b border-blue-100">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Menu Icon on Left -->
             <button id="menuToggle" class="md:hidden flex items-center justify-center w-10 h-10 text-gray-600 hover:text-[#1e3a8a] transition">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
             
-            <a href="home.html" class="flex items-center gap-3">
-                <img src="bp_logo.png" alt="Business Partner Tech Logo" class="h-10 w-auto logo-nav">
+            <a href="home-ar.html" class="flex items-center gap-3">
+                <img src="bp_logo.png" alt="شعار Business Partner Tech" class="h-10 w-auto logo-nav">
             </a>
             <div class="hidden md:flex gap-8 text-sm font-medium text-gray-600">
-                <a href="home.html" class="hover:text-[#1e3a8a] transition">Home</a>
-                <a href="services.html" class="hover:text-[#1e3a8a] transition">Services</a>
-                <a href="process.html" class="hover:text-[#1e3a8a] transition">Our Process</a>
-                <a href="about-us.html" class="hover:text-[#1e3a8a] transition text-[#1e3a8a] font-semibold">About Us</a>
-                <a href="contact.html" class="hover:text-[#1e3a8a] transition">Contact Us</a>
+                <a href="home-ar.html" class="hover:text-[#1e3a8a] transition">الرئيسية</a>
+                <a href="services-ar.html" class="hover:text-[#1e3a8a] transition">الخدمات</a>
+                <a href="process-ar.html" class="hover:text-[#1e3a8a] transition">عملنا</a>
+                <a href="about-us-ar.html" class="hover:text-[#1e3a8a] transition text-[#1e3a8a] font-semibold">من نحن</a>
+                <a href="contact-ar.html" class="hover:text-[#1e3a8a] transition">اتصل بنا</a>
             </div>
             <div class="flex items-center gap-4">
-                <!-- Language Switcher -->
                 <div class="flex items-center gap-2 bg-blue-50 rounded-full px-3 py-1.5 border border-blue-100">
-                    <a href="about-us.html" class="text-[#1e3a8a] font-semibold text-xs px-2">EN</a>
+                    <a href="about-us.html" class="text-gray-500 hover:text-[#1e3a8a] transition text-xs px-2">EN</a>
                     <span class="text-blue-300">|</span>
-                    <a href="about-us-ar.html" class="text-gray-500 hover:text-[#1e3a8a] transition text-xs px-2">AR</a>
+                    <a href="about-us-ar.html" class="text-[#1e3a8a] font-semibold text-xs px-2">AR</a>
                 </div>
-                <a href="contact.html" class="bg-black text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#1e3a8a] transition duration-300 btn-ripple magnetic-btn hover-lift">
-                    Book a Demo
+                <a href="contact-ar.html" class="bg-black text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#1e3a8a] transition duration-300 btn-ripple magnetic-btn hover-lift">
+                    احجز عرض تجريبي
                 </a>
             </div>
         </div>
         
-        <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-blue-50 border-t border-blue-100">
             <div class="px-6 py-4 space-y-4">
-                <a href="home.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">Home</a>
-                <a href="services.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">Services</a>
-                <a href="process.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">Our Process</a>
-                <a href="about-us.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition text-[#1e3a8a] font-semibold">About Us</a>
-                <a href="contact.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">Contact Us</a>
+                <a href="home-ar.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">الرئيسية</a>
+                <a href="services-ar.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">الخدمات</a>
+                <a href="process-ar.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">عملنا</a>
+                <a href="about-us-ar.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition text-[#1e3a8a] font-semibold">من نحن</a>
+                <a href="contact-ar.html" class="block text-sm font-medium text-gray-600 hover:text-[#1e3a8a] transition">اتصل بنا</a>
                 <div class="pt-4 border-t border-blue-100">
                     <div class="flex items-center gap-2">
-                        <span class="text-xs text-gray-500">Language:</span>
-                        <a href="about-us.html" class="text-[#1e3a8a] font-semibold text-xs">EN</a>
+                        <span class="text-xs text-gray-500">اللغة:</span>
+                        <a href="about-us.html" class="text-gray-500 hover:text-[#1e3a8a] transition text-xs">EN</a>
                         <span class="text-blue-300">|</span>
-                        <a href="about-us-ar.html" class="text-gray-500 hover:text-[#1e3a8a] transition text-xs">AR</a>
+                        <a href="about-us-ar.html" class="text-[#1e3a8a] font-semibold text-xs">AR</a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- About Us Section -->
     <section class="py-24 bg-blue-50 mt-20">
         <div class="max-w-7xl mx-auto px-6">
-            <!-- Our Team Section -->
             <div class="max-w-4xl mx-auto mb-20" data-aos="fade-up">
                 <div class="text-center mb-12">
-                    <span class="text-[#1e3a8a] font-bold tracking-wider uppercase text-xs">Our Team</span>
-                    <h2 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">A Dynamic Combination</h2>
+                    <span class="text-[#1e3a8a] font-bold tracking-wider uppercase text-xs">فريقنا</span>
+                    <h2 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">مزيج ديناميكي</h2>
                 </div>
                 <div class="bg-gradient-to-br from-gray-50 to-white p-10 rounded-3xl border border-gray-100 shadow-sm hover-lift card-3d">
                     <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                        Our team comprises of well-trained, eager young calibers and seasoned veterans who know the drill. We are driven towards growth.
+                        فريقنا يتكون من كفاءات شابة مدربة جيداً ومتحمسة وأصحاب خبرة من المخضرمين الذين يعرفون الحرفة. نحن مدفوعون نحو النمو.
                     </p>
                     <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                        This potent and dynamic combination enables us to forge strategic alliances with partners and clients and make a difference by establishing and improving the effectiveness, allowing the partnerships to ultimately creating value.
+                        هذا المزيج القوي والديناميكي يمكننا من عقد تحالفات استراتيجية مع الشركاء والعملاء وإحداث فرق من خلال إنشاء وتحسين الفعالية، مما يسمح للشراكات بإنشاء قيمة في النهاية.
                     </p>
                     <p class="text-lg text-gray-700 leading-relaxed">
-                        We bridge the gap between the high-level strategies and on the ground executions.
+                        نحن نربط الفجوة بين الاستراتيجيات عالية المستوى والتنفيذ على أرض الواقع.
                     </p>
                 </div>
             </div>
 
-            <!-- Field Solutions Overview -->
             <div class="mb-20">
                 <div class="text-center mb-12" data-aos="fade-up">
-                    <span class="text-[#1e3a8a] font-bold tracking-wider uppercase text-xs">Our Company</span>
+                    <span class="text-[#1e3a8a] font-bold tracking-wider uppercase text-xs">شركتنا</span>
                     <h2 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">Field Solutions</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">A Vision to Innovate the Future – On Ground Execution, Strategic Growth, Local Expertise</p>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">رؤية لابتكار المستقبل – التنفيذ على أرض الواقع، النمو الاستراتيجي، الخبرة المحلية</p>
                 </div>
 
                 <div class="grid lg:grid-cols-2 gap-12 items-center mb-12">
                     <div data-aos="fade-right">
                         <div class="space-y-6 text-gray-700 leading-relaxed">
                             <p class="text-lg">
-                                Established in 2020, Field Solutions Group stands as a prominent Saudi-based entity specializing in sales and business development solutions, dedicated to enabling clients in accomplishing their targets and organizational aspirations.
+                                تأسست في عام 2020، تقف مجموعة Field Solutions ككيان سعودي بارز متخصص في حلول المبيعات وتنمية الأعمال، مكرسة لتمكين العملاء من تحقيق أهدافهم وتطلعاتهم التنظيمية.
                             </p>
                             <p class="text-lg">
-                                The Company was born with a vision to empower partners for excellence and prominence in the rapidly evolving market.
+                                ولدت الشركة برؤية لتمكين الشركاء من التميز والبروز في السوق سريع التطور.
                             </p>
                             <p class="text-lg">
-                                Our platform facilitates seamless execution of short-term missions and long-term strategies, addressing the intricate demands of marketing, sales, business development, networking, and training activities across various sectors.
+                                منصتنا تسهل التنفيذ السلس للمهام قصيرة المدى والاستراتيجيات طويلة المدى، معالجة المتطلبات المعقدة للتسويق والمبيعات وتنمية الأعمال والشبكات وأنشطة التدريب عبر القطاعات المختلفة.
                             </p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-6" data-aos="fade-left" data-aos-delay="200">
                         <div class="bg-gradient-to-br from-[#1e3a8a] to-[#3b82f6] p-8 rounded-3xl shadow-sm text-white text-center hover-lift animate-float">
                             <div class="text-5xl font-bold mb-2">3</div>
-                            <div class="text-sm font-medium opacity-90">Regional Offices</div>
+                            <div class="text-sm font-medium opacity-90">مكاتب إقليمية</div>
                         </div>
                         <div class="bg-gradient-to-br from-[#60a5fa] to-[#3b82f6] p-8 rounded-3xl shadow-sm text-white text-center hover-lift animate-float-delayed">
                             <div class="text-5xl font-bold mb-2">22+</div>
-                            <div class="text-sm font-medium opacity-90">Cities Presence</div>
+                            <div class="text-sm font-medium opacity-90">حضور في المدن</div>
                         </div>
                         <div class="bg-gradient-to-br from-blue-600 to-blue-700 p-8 rounded-3xl shadow-sm text-white text-center col-span-2 hover-lift pulse-glow">
                             <div class="text-3xl font-bold mb-2">2020</div>
-                            <div class="text-sm font-medium opacity-90">Established</div>
+                            <div class="text-sm font-medium opacity-90">التأسيس</div>
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] rounded-3xl p-10 text-white pulse-glow" data-aos="fade-up" data-aos-delay="300">
                     <p class="text-xl leading-relaxed text-center max-w-4xl mx-auto">
-                        With 3 regional offices and presence in 22+ cities, we aim to penetrate new markets, increase market share, and support partners in navigating the complexities of the region's business environment.
+                        مع 3 مكاتب إقليمية وحضور في 22+ مدينة، نهدف إلى اختراق أسواق جديدة وزيادة الحصة السوقية ودعم الشركاء في التنقل في تعقيدات بيئة الأعمال الإقليمية.
                     </p>
                 </div>
             </div>
 
-            <!-- Message from Founder -->
             <div class="mb-20">
                 <div class="max-w-4xl mx-auto" data-aos="fade-up">
                     <div class="text-center mb-12">
-                        <span class="text-[#1e3a8a] font-bold tracking-wider uppercase text-xs">Leadership</span>
-                        <h2 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">Message from the Founder and CEO</h2>
+                        <span class="text-[#1e3a8a] font-bold tracking-wider uppercase text-xs">القيادة</span>
+                        <h2 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">رسالة من المؤسس والرئيس التنفيذي</h2>
                     </div>
                     <div class="bg-gradient-to-br from-gray-50 to-white p-12 rounded-3xl border border-gray-100 shadow-lg relative overflow-hidden card-3d hover-lift">
-                        <div class="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full -translate-y-1/2 translate-x-1/2 opacity-20"></div>
+                        <div class="absolute top-0 left-0 w-64 h-64 bg-blue-100 rounded-full -translate-y-1/2 -translate-x-1/2 opacity-20"></div>
                         <div class="relative z-10">
                             <div class="flex items-center gap-4 mb-6">
                                 <div class="w-20 h-20 bg-gradient-to-br from-[#1e3a8a] to-[#3b82f6] rounded-full flex items-center justify-center text-white text-2xl font-bold">
                                     OW
                                 </div>
                                 <div>
-                                    <h3 class="text-2xl font-bold text-gray-900">Mr. Omar Waked</h3>
-                                    <p class="text-gray-600">Founder & CEO</p>
+                                    <h3 class="text-2xl font-bold text-gray-900">السيد عمر واكد</h3>
+                                    <p class="text-gray-600">المؤسس والرئيس التنفيذي</p>
                                 </div>
                             </div>
-                            <div class="border-l-4 border-[#1e3a8a] pl-6 text-gray-700 leading-relaxed">
+                            <div class="border-r-4 border-[#1e3a8a] pr-6 text-gray-700 leading-relaxed">
                                 <p class="text-lg italic">
-                                    "Our commitment is to bridge the gap between vision and execution, empowering our partners to achieve excellence in an ever-evolving market landscape."
+                                    "التزامنا هو ربط الفجوة بين الرؤية والتنفيذ، وتمكين شركائنا من تحقيق التميز في مشهد السوق سريع التطور."
                                 </p>
                             </div>
                         </div>
@@ -164,67 +160,60 @@
                 </div>
             </div>
 
-            <!-- Management Team -->
             <div>
                 <div class="text-center mb-16" data-aos="fade-up">
-                    <span class="text-[#1e3a8a] font-bold tracking-wider uppercase text-xs">Leadership Team</span>
-                    <h2 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">Our Management Team</h2>
-                    <p class="text-gray-500 max-w-2xl mx-auto">Experienced leaders driving innovation and excellence across all sectors.</p>
+                    <span class="text-[#1e3a8a] font-bold tracking-wider uppercase text-xs">فريق القيادة</span>
+                    <h2 class="text-4xl lg:text-5xl font-bold mt-2 mb-4">فريق الإدارة لدينا</h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto">قادة ذوو خبرة يقودون الابتكار والتميز عبر جميع القطاعات.</p>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Team Member 1 -->
                     <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group card-3d hover-lift" data-aos="fade-up" data-aos-delay="0">
                         <div class="w-20 h-20 bg-gradient-to-br from-[#1e3a8a] to-[#3b82f6] rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6 mx-auto group-hover:scale-110 transition duration-300">
                             AA
                         </div>
-                        <h3 class="text-xl font-bold text-center mb-2">Abdulla Alyami</h3>
-                        <p class="text-gray-600 text-center text-sm">Chief of Legal & Human Capital</p>
+                        <h3 class="text-xl font-bold text-center mb-2">عبدالله اليامي</h3>
+                        <p class="text-gray-600 text-center text-sm">رئيس الشؤون القانونية ورأس المال البشري</p>
                     </div>
 
-                    <!-- Team Member 2 -->
                     <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="100">
                         <div class="w-20 h-20 bg-gradient-to-br from-[#60a5fa] to-[#3b82f6] rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6 mx-auto group-hover:scale-110 transition duration-300">
                             IH
                         </div>
-                        <h3 class="text-xl font-bold text-center mb-2">Ibrahim Hakimi</h3>
-                        <p class="text-gray-600 text-center text-sm">GM Consumer Sector</p>
+                        <h3 class="text-xl font-bold text-center mb-2">إبراهيم حكيمي</h3>
+                        <p class="text-gray-600 text-center text-sm">المدير العام للقطاع الاستهلاكي</p>
                     </div>
 
-                    <!-- Team Member 3 -->
                     <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="200">
                         <div class="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6 mx-auto group-hover:scale-110 transition duration-300">
                             EE
                         </div>
-                        <h3 class="text-xl font-bold text-center mb-2">Elsayed Elbialy</h3>
-                        <p class="text-gray-600 text-center text-sm">GM Enterprise & Operations</p>
+                        <h3 class="text-xl font-bold text-center mb-2">السيد البيالي</h3>
+                        <p class="text-gray-600 text-center text-sm">المدير العام للمؤسسات والعمليات</p>
                     </div>
 
-                    <!-- Team Member 4 -->
                     <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group card-3d hover-lift" data-aos="fade-up" data-aos-delay="0">
                         <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6 mx-auto group-hover:scale-110 transition duration-300">
                             AT
                         </div>
-                        <h3 class="text-xl font-bold text-center mb-2">Ahmed Toubar</h3>
-                        <p class="text-gray-600 text-center text-sm">Development & Business Finance Director</p>
+                        <h3 class="text-xl font-bold text-center mb-2">أحمد طوبار</h3>
+                        <p class="text-gray-600 text-center text-sm">مدير التجارة المالية والتطوير</p>
                     </div>
 
-                    <!-- Team Member 5 -->
                     <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="100">
                         <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6 mx-auto group-hover:scale-110 transition duration-300">
                             OA
                         </div>
-                        <h3 class="text-xl font-bold text-center mb-2">Othman Awad</h3>
-                        <p class="text-gray-600 text-center text-sm">Certified Odoo Techno-Functional Consultant</p>
+                        <h3 class="text-xl font-bold text-center mb-2">عثمان عوض</h3>
+                        <p class="text-gray-600 text-center text-sm">مستشار Odoo تقني وظيفي معتمد</p>
                     </div>
 
-                    <!-- Team Member 6 -->
                     <div class="bg-gradient-to-br from-white to-gray-50 p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition duration-300 group" data-aos="fade-up" data-aos-delay="200">
                         <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6 mx-auto group-hover:scale-110 transition duration-300">
                             MA
                         </div>
-                        <h3 class="text-xl font-bold text-center mb-2">Mohamed Abdelsalam</h3>
-                        <p class="text-gray-600 text-center text-sm">Head of Corporate Affairs</p>
+                        <h3 class="text-xl font-bold text-center mb-2">محمد عبدالسلام</h3>
+                        <p class="text-gray-600 text-center text-sm">رئيس الشؤون المؤسسية</p>
                     </div>
                 </div>
             </div>
@@ -235,32 +224,32 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-start mb-16">
                 <div>
-                    <img src="bp_logo.png" alt="Business Partner Tech Logo" class="h-12 w-auto mb-6 logo-footer">
-                    <p class="text-gray-400 max-w-xs">Helping modern companies scale with the world's best open-source ERP.</p>
+                    <img src="bp_logo.png" alt="شعار Business Partner Tech" class="h-12 w-auto mb-6 logo-footer">
+                    <p class="text-gray-400 max-w-xs">مساعدة الشركات الحديثة على التوسع مع أفضل نظام ERP مفتوح المصدر في العالم.</p>
                 </div>
                 <div class="flex gap-12 mt-8 md:mt-0">
                     <div>
-                        <h4 class="font-bold mb-4">Company</h4>
+                        <h4 class="font-bold mb-4">الشركة</h4>
                         <ul class="text-gray-400 space-y-2 text-sm">
-                            <li class="stagger-item"><a href="about-us.html" class="hover:text-white transition">About Us</a></li>
-                            <li class="stagger-item"><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+                            <li class="stagger-item"><a href="about-us-ar.html" class="hover:text-white transition">من نحن</a></li>
+                            <li class="stagger-item"><a href="contact-ar.html" class="hover:text-white transition">اتصل بنا</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-bold mb-4">Services</h4>
+                        <h4 class="font-bold mb-4">الخدمات</h4>
                         <ul class="text-gray-400 space-y-2 text-sm">
-                            <li class="stagger-item"><a href="services.html" class="hover:text-white transition">Implementation</a></li>
-                            <li class="stagger-item"><a href="services.html" class="hover:text-white transition">Migration</a></li>
-                            <li class="stagger-item"><a href="services.html" class="hover:text-white transition">Training</a></li>
+                            <li class="stagger-item"><a href="services-ar.html" class="hover:text-white transition">التنفيذ</a></li>
+                            <li class="stagger-item"><a href="services-ar.html" class="hover:text-white transition">الترحيل</a></li>
+                            <li class="stagger-item"><a href="services-ar.html" class="hover:text-white transition">التدريب</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between text-gray-500 text-xs">
-                <p>&copy; 2024 Business Partner Tech. All rights reserved.</p>
+                <p>&copy; 2024 Business Partner Tech. جميع الحقوق محفوظة.</p>
                 <div class="flex gap-4 mt-4 md:mt-0">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <a href="#">سياسة الخصوصية</a>
+                    <a href="#">شروط الخدمة</a>
                 </div>
             </div>
         </div>
@@ -275,13 +264,11 @@
             easing: 'ease-out-cubic',
         });
 
-        // Mobile menu toggle
         document.getElementById('menuToggle').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobileMenu');
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
             if (window.scrollY > 50) {
@@ -291,7 +278,6 @@
             }
         });
 
-        // Intersection Observer for fade-in animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
