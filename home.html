@@ -77,7 +77,7 @@
             <div data-aos="fade-up" data-aos-duration="1000">
                 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-[#1e3a8a] text-xs font-bold mb-6 fade-in-scale">
                     <span class="w-2 h-2 rounded-full bg-[#60a5fa] animate-pulse"></span>
-                    Certified Odoo Gold Partner
+                    Certified Odoo Partner
                 </div>
                 <h1 class="text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6">
                     ERP Solutions for <br>
@@ -94,6 +94,12 @@
                     <a href="services.html" class="px-8 py-4 bg-white text-gray-900 border border-gray-200 rounded-full font-medium hover:bg-gray-50 transition flex items-center justify-center hover-lift magnetic-btn">
                         View Our Services
                     </a>
+                    <button onclick="downloadCompanyProfile()" class="px-8 py-4 bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white rounded-full font-medium hover:from-[#1e40af] hover:to-[#2563eb] transition flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover-lift magnetic-btn">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        Download Company Profile
+                    </button>
                 </div>
             </div>
 
@@ -171,44 +177,18 @@
             <!-- Video Container with Flashy Design -->
             <div class="relative max-w-5xl mx-auto" data-aos="zoom-in" data-aos-duration="1000">
                 <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 hover:border-[#60a5fa] transition-all duration-500 pulse-glow">
-                    <!-- Video Player -->
-                    <div class="relative bg-black aspect-video">
-                        <!-- HTML5 Video Player -->
-                        <video 
-                            id="heroVideo" 
-                            class="w-full h-full object-cover" 
-                            controls
-                            autoplay
-                            preload="auto"
-                            playsinline
-                        >
-                            <source src="Video1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        
-                        <!-- Custom Play Button Overlay (hidden when video is playing) -->
-                        <div id="playButtonOverlay" class="absolute inset-0 flex items-center justify-center bg-black/40 hover:bg-black/20 transition-all duration-300 cursor-pointer group">
-                            <div class="relative">
-                                <div class="w-24 h-24 bg-white/90 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300 pulse-glow">
-                                    <svg class="w-12 h-12 text-[#1e3a8a] ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M8 5v14l11-7z"/>
-                                    </svg>
-                                </div>
-                                <!-- Animated Rings -->
-                                <div class="absolute inset-0 w-24 h-24 border-4 border-white/30 rounded-full animate-ping"></div>
-                                <div class="absolute inset-0 w-24 h-24 border-2 border-white/50 rounded-full animate-pulse"></div>
-                            </div>
-                        </div>
-
-                        <!-- Video Info Overlay (positioned to not interfere with YouTube controls) -->
-                        <div class="absolute bottom-16 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 pointer-events-none">
-                            <h3 class="text-white text-xl font-bold mb-2">Transform Your Business with Odoo</h3>
-                            <p class="text-gray-300 text-sm">See how our ERP solutions drive efficiency and growth</p>
-                        </div>
-                        
-                        <!-- Instructions: To use your own video, replace the YouTube video ID above -->
-                        <!-- Get video ID from YouTube URL: https://www.youtube.com/watch?v=VIDEO_ID -->
-                        <!-- Replace "dQw4w9WgXcQ" with your video ID in the iframe src -->
+                    <!-- Interactive Transformation Video -->
+                    <div class="relative bg-black" style="height: 700px;">
+                        <!-- Embedded Transformation Presentation -->
+                        <iframe 
+                            id="transformationVideo" 
+                            src="transformation-video.html"
+                            class="w-full h-full"
+                            style="border: none; border-radius: 0; overflow: hidden;"
+                            allow="autoplay"
+                            title="Business Transformation Presentation"
+                            scrolling="no"
+                        ></iframe>
                     </div>
 
                     <!-- Decorative Elements -->
@@ -546,6 +526,14 @@
                         <ul class="text-gray-400 space-y-2 text-sm">
                             <li class="stagger-item"><a href="about-us.html" class="hover:text-white transition">About Us</a></li>
                             <li class="stagger-item"><a href="contact.html" class="hover:text-white transition">Contact Us</a></li>
+                            <li class="stagger-item">
+                                <button onclick="downloadCompanyProfile()" class="hover:text-white transition flex items-center gap-1 text-left">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                    Download Company Profile
+                                </button>
+                            </li>
                         </ul>
                     </div>
                     <div>
@@ -612,35 +600,12 @@
             observer.observe(el);
         });
 
-        // Video Play Button Handler
-        const video = document.getElementById('heroVideo');
-        const playButtonOverlay = document.getElementById('playButtonOverlay');
-        
-        if (video && playButtonOverlay) {
-            // Hide overlay when video starts playing
-            video.addEventListener('play', function() {
-                playButtonOverlay.style.display = 'none';
-            });
-            
-            // Show overlay when video is paused
-            video.addEventListener('pause', function() {
-                playButtonOverlay.style.display = 'flex';
-            });
-            
-            // Click overlay to play video
-            playButtonOverlay.addEventListener('click', function() {
-                video.play();
-            });
-            
-            // Hide overlay initially since video autoplays
-            playButtonOverlay.style.display = 'none';
-            
-            // Show overlay if video fails to autoplay
-            video.addEventListener('loadeddata', function() {
-                if (video.paused) {
-                    playButtonOverlay.style.display = 'flex';
-                }
-            });
+        // Transformation video is embedded as iframe - no additional controls needed
+
+        // Company Profile Download Function
+        function downloadCompanyProfile() {
+            // Simply open the company profile page in a new tab
+            window.open('company-profile.html', '_blank');
         }
 
         // Tab Functionality
@@ -675,6 +640,56 @@
             });
         });
     </script>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/966596032233" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contact us on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes pulse-whatsapp {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+        }
+
+        @media print {
+            .whatsapp-float {
+                display: none !important;
+            }
+        }
+    </style>
 </body>
 </html>
 

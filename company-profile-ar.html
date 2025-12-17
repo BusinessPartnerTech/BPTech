@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Partner Tech - ملف الشركة</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* PDF-Ready Company Profile Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: white;
+            direction: rtl;
+        }
+
+        /* Force page breaks */
+        .page-break {
+            page-break-after: always;
+            break-after: always;
+        }
+
+        .page-break-before {
+            page-break-before: always;
+            break-before: always;
+        }
+
+        .no-page-break {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        /* Cover Page */
+        .cover-page {
+            height: 297mm;
+            width: 210mm;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #3b82f6 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            page-break-after: always;
+            page-break-inside: avoid;
+        }
+
+        .cover-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(96, 165, 250, 0.2) 0%, transparent 50%);
+            opacity: 0.4;
+        }
+
+        .cover-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 60px;
+        }
+
+        .cover-logo {
+            width: 200px;
+            height: auto;
+            margin-bottom: 40px;
+            filter: brightness(0) invert(1);
+        }
+
+        .cover-title {
+            font-size: 64px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .cover-subtitle {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 60px;
+            opacity: 0.9;
+        }
+
+        .cover-tagline {
+            font-size: 20px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 20px 40px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: inline-block;
+            margin-bottom: 80px;
+        }
+
+        .cover-badge {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 12px 24px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .badge-dot {
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Standard Page Layout */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            max-height: 297mm;
+            padding: 40px 50px;
+            page-break-after: always;
+            page-break-inside: avoid;
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Page Logo */
+        .page-logo {
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            width: 150px;
+            height: auto;
+            opacity: 1;
+            z-index: 100;
+        }
+
+        /* Cover Page Logo */
+        .cover-logo {
+            position: absolute;
+            top: 50px;
+            left: 70px;
+            width: 180px;
+            height: auto;
+            z-index: 100;
+            filter: invert(1) brightness(1.2) drop-shadow(0 2px 8px rgba(255, 255, 255, 0.3));
+            opacity: 0.95;
+            mix-blend-mode: screen;
+        }
+
+        /* Back Cover Logo */
+        .back-cover-logo {
+            position: absolute;
+            top: 50px;
+            left: 70px;
+            width: 180px;
+            height: auto;
+            z-index: 1000;
+            filter: invert(1) brightness(1.2) drop-shadow(0 2px 8px rgba(255, 255, 255, 0.3));
+            opacity: 0.95;
+            mix-blend-mode: screen;
+        }
+
+        .page-header {
+            border-bottom: 3px solid #1e3a8a;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            page-break-after: avoid;
+            flex-shrink: 0;
+        }
+
+        .page-title {
+            font-size: 38px;
+            font-weight: 800;
+            color: #1e3a8a;
+            margin-bottom: 8px;
+            page-break-after: avoid;
+        }
+
+        .page-subtitle {
+            font-size: 16px;
+            color: #6b7280;
+            font-weight: 400;
+            page-break-after: avoid;
+        }
+
+        /* About Section */
+        .about-section {
+            background: white;
+        }
+
+        .intro-text {
+            font-size: 14px;
+            color: #1f2937;
+            line-height: 1.5;
+            margin-bottom: 18px;
+            page-break-after: avoid;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            page-break-inside: avoid;
+        }
+
+        .highlight-box h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box p {
+            font-size: 13px;
+            line-height: 1.5;
+            opacity: 0.95;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .service-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            padding: 18px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            page-break-inside: avoid;
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .service-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 8px;
+        }
+
+        .service-description {
+            font-size: 12px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .service-features {
+            margin-top: 10px;
+            padding-right: 0;
+            list-style: none;
+        }
+
+        .service-features li {
+            font-size: 11px;
+            color: #475569;
+            padding: 4px 0;
+            padding-right: 18px;
+            position: relative;
+        }
+
+        .service-features li:before {
+            content: "✓";
+            position: absolute;
+            right: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+
+        /* Process Timeline */
+        .process-timeline {
+            margin: 20px 0;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 25px;
+            position: relative;
+            page-break-inside: avoid;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: 800;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-size: 19px;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 8px;
+        }
+
+        .step-description {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.5;
+            margin-bottom: 10px;
+        }
+
+        .step-points {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 5px;
+        }
+
+        .step-point {
+            font-size: 12px;
+            color: #475569;
+            padding-right: 18px;
+            position: relative;
+        }
+
+        .step-point:before {
+            content: "•";
+            position: absolute;
+            right: 0;
+            color: #3b82f6;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Why Choose Us */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin: 25px 0;
+        }
+
+        .benefit-card {
+            display: flex;
+            gap: 15px;
+            padding: 18px;
+            background: #f8fafc;
+            border-radius: 10px;
+            border-right: 3px solid #3b82f6;
+            page-break-inside: avoid;
+        }
+
+        .benefit-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .benefit-content h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 5px;
+        }
+
+        .benefit-content p {
+            font-size: 12px;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        /* Contact Page */
+        .contact-page {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            page-break-inside: avoid;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            align-items: start;
+            page-break-inside: avoid;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 4px;
+        }
+
+        .contact-details p {
+            font-size: 12px;
+            color: #64748b;
+        }
+
+        /* Back Cover */
+        .back-cover {
+            width: 210mm;
+            height: 297mm;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 80px;
+            page-break-before: always;
+            page-break-inside: avoid;
+            position: relative;
+        }
+
+        .back-cover-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-cover h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .back-cover p {
+            font-size: 20px;
+            opacity: 0.9;
+            margin-bottom: 50px;
+            line-height: 1.6;
+        }
+
+        .back-cover-cta {
+            background: white;
+            color: #1e3a8a;
+            padding: 20px 50px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 60px;
+        }
+
+        .footer-info {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-top: 40px;
+        }
+
+        /* Print Optimizations */
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+            
+            .page-break {
+                page-break-after: always;
+            }
+
+            .page {
+                max-height: 297mm;
+                overflow: hidden;
+            }
+
+            * {
+                page-break-inside: avoid;
+            }
+
+            .service-card,
+            .team-member-card,
+            .benefit-card,
+            .process-step {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+        }
+
+        /* Section Divider */
+        .section-divider {
+            height: 2px;
+            background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 50%, #1e3a8a 100%);
+            margin: 25px 0;
+            page-break-after: avoid;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+
+        .mb-40 {
+            margin-bottom: 40px;
+        }
+
+        /* Team Members Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .team-member-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            page-break-inside: avoid;
+        }
+
+        .team-member-initial {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 auto 12px;
+        }
+
+        .team-member-card h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 4px;
+        }
+
+        .team-member-card p {
+            font-size: 12px;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        /* Company Experience Box */
+        .experience-box {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 12px;
+            border-right: 4px solid #3b82f6;
+            margin: 25px 0;
+            page-break-inside: avoid;
+        }
+
+        .experience-box h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 12px;
+        }
+
+        .experience-box p {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .experience-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .experience-item {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .experience-item .number {
+            font-size: 24px;
+            font-weight: 800;
+            color: #3b82f6;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .label {
+            font-size: 11px;
+            color: #64748b;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cover Page -->
+    <div class="cover-page">
+        <img src="bp_logo.png" alt="Business Partner Tech" class="cover-logo">
+        <div class="cover-pattern"></div>
+        <div class="cover-content">
+            <div class="cover-badge">
+                <span class="badge-dot"></span>
+                شريك Odoo المعتمد
+            </div>
+            <h1 class="cover-title">ملف الشركة</h1>
+            <h2 class="cover-subtitle">حلول ERP للنمو غير المحدود</h2>
+            <div class="cover-tagline">
+                تحويل الأعمال من خلال التكنولوجيا المبتكرة
+            </div>
+        </div>
+    </div>
+
+    <!-- About Us Page -->
+    <div class="page about-section">
+        <img src="bp_logo.png" alt="Business Partner Tech" class="page-logo">
+        <div class="page-header">
+            <h1 class="page-title">من نحن</h1>
+            <p class="page-subtitle">شريكك الموثوق في التحول الرقمي</p>
+        </div>
+
+        <p class="intro-text">
+            Business Partner Tech هو شريك Odoo المعتمد المتخصص في التنفيذ الكامل لنظام ERP والتخصيص وخدمات الدعم. نساعد الشركات على تبسيط عملياتها وتحقيق نمو غير محدود من خلال حلول تقنية مبتكرة.
+        </p>
+
+        <div class="highlight-box">
+            <h3>مهمتنا</h3>
+            <p>
+                توقف عن التعامل مع جداول البيانات المنفصلة. نحن ننفذ ونخصص وندعم نظام Odoo الخاص بك حتى تتمكن من التركيز على التوسع. نحن نستبدل الأنظمة المكلفة والمجزأة بحل موحد ينمو مع عملك.
+            </p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="page-title" style="font-size: 28px; margin-bottom: 20px;">خبرة الشركة والاختصاص</h2>
+        
+        <div class="experience-box">
+            <h3>سجل حافل</h3>
+            <p>
+                تقدم Business Partner Tech سنوات من الخبرة المثبتة في تنفيذ نظام ERP والتحول الرقمي. نجح فريقنا في تقديم مشاريع Odoo معقدة عبر صناعات مختلفة، مما ساعد الشركات على تبسيط العمليات وتحقيق نمو قابل للقياس.
+            </p>
+            <p>
+                نجمع بين الرؤية الاستراتيجية والتنفيذ العملي، ونربط الفجوة بين أهداف الأعمال عالية المستوى والتنفيذ العملي. يضمن نهجنا أن كل حل مصمم لتلبية احتياجات العمل الفريدة مع الاستفادة من أفضل الممارسات الصناعية.
+            </p>
+            
+            <div class="experience-highlights">
+                <div class="experience-item">
+                    <div class="number">50+</div>
+                    <div class="label">مشروع منجز</div>
+                </div>
+                <div class="experience-item">
+                    <div class="number">5+</div>
+                    <div class="label">سنوات خبرة</div>
+                </div>
+                <div class="experience-item">
+                    <div class="number">100%</div>
+                    <div class="label">رضا العملاء</div>
+                </div>
+            </div>
+        </div>
+
+        <p class="intro-text" style="font-size: 13px; margin-top: 20px;">
+            يضم فريقنا محترفين مدربين جيداً وخبراء متمرسين يسعون نحو النمو. نحن نبني تحالفات استراتيجية مع الشركاء والعملاء، ونحدث فرقاً من خلال إنشاء وتحسين الفعالية، وفي النهاية خلق قيمة دائمة.
+        </p>
+    </div>
+
+    <!-- Leadership Team Page -->
+    <div class="page">
+        <img src="bp_logo.png" alt="Business Partner Tech" class="page-logo">
+        <div class="page-header">
+            <h1 class="page-title">فريق القيادة</h1>
+            <p class="page-subtitle">تعرف على الخبراء وراء نجاحنا</p>
+        </div>
+
+        <p class="intro-text">
+            يجمع فريق القيادة لدينا عقوداً من الخبرة المشتركة في تنفيذ نظام ERP وتطوير البرمجيات وتحويل الأعمال. معاً، نوجه عملاءنا نحو النمو المستدام والتميز التشغيلي.
+        </p>
+
+        <div class="team-grid">
+            <div class="team-member-card">
+                <div class="team-member-initial">OW</div>
+                <h4>عمر واكد</h4>
+                <p>الرئيس التنفيذي</p>
+            </div>
+            <div class="team-member-card">
+                <div class="team-member-initial">AT</div>
+                <h4>أحمد طوبار</h4>
+                <p>كبير مسؤولي التطوير</p>
+            </div>
+            <div class="team-member-card">
+                <div class="team-member-initial">OA</div>
+                <h4>عثمان عوض</h4>
+                <p>مدير التقنية والمشاريع</p>
+            </div>
+            <div class="team-member-card">
+                <div class="team-member-initial">AA</div>
+                <h4>عبدالله اليامي</h4>
+                <p>رئيس الشؤون القانونية ورأس المال البشري</p>
+            </div>
+            <div class="team-member-card">
+                <div class="team-member-initial">EE</div>
+                <h4>السيد البيالي</h4>
+                <p>مدير المبيعات وعلاقات العملاء</p>
+            </div>
+            <div class="team-member-card">
+                <div class="team-member-initial">MA</div>
+                <h4>محمد علي</h4>
+                <p>مدير التطوير والتخصيص</p>
+            </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="page-title" style="font-size: 24px; margin-bottom: 20px;">التميز القيادي</h2>
+        
+        <div class="benefits-grid" style="margin-top: 30px;">
+            <div class="benefit-card">
+                <div class="benefit-icon">🎯</div>
+                <div class="benefit-content">
+                    <h4>الرؤية الاستراتيجية</h4>
+                    <p>يقدم قادتنا التوجيه الاستراتيجي ويضمنون التوافق مع أهداف الأعمال وأفضل الممارسات الصناعية.</p>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">💡</div>
+                <div class="benefit-content">
+                    <h4>التركيز على الابتكار</h4>
+                    <p>استكشاف مستمر للتقنيات والمنهجيات الجديدة لتقديم حلول متطورة لعملائنا.</p>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🤝</div>
+                <div class="benefit-content">
+                    <h4>شراكة العملاء</h4>
+                    <p>بناء علاقات تعاونية قوية مع العملاء لضمان النجاح طويل الأمد والنمو المتبادل.</p>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">📊</div>
+                <div class="benefit-content">
+                    <h4>التركيز على النتائج</h4>
+                    <p>التركيز على تقديم نتائج قابلة للقياس تدفع قيمة الأعمال والكفاءة التشغيلية.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Page -->
+    <div class="page">
+        <img src="bp_logo.png" alt="Business Partner Tech" class="page-logo">
+        <div class="page-header">
+            <h1 class="page-title">خدماتنا</h1>
+            <p class="page-subtitle">حلول Odoo الشاملة من البداية للنهاية</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">✓</div>
+                <h3 class="service-title">تنفيذ Odoo</h3>
+                <p class="service-description">تنفيذ كامل من البداية للنهاية لنظام Odoo ERP. نتعامل مع كل شيء من التخطيط والتكوين إلى نقل البيانات ودعم التشغيل.</p>
+                <ul class="service-features">
+                    <li>تحليل عمليات الأعمال</li>
+                    <li>تكوين الوحدات</li>
+                    <li>نقل البيانات</li>
+                    <li>دعم التشغيل</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">⚙</div>
+                <h3 class="service-title">التطوير المخصص</h3>
+                <p class="service-description">بناء وحدات وميزات مخصصة مصممة خصيصاً لاحتياجات عملك المحددة. يقوم مطورونا المعتمدون بإنشاء حلول تتناسب تماماً مع سير عملك.</p>
+                <ul class="service-features">
+                    <li>تطوير وحدات مخصصة</li>
+                    <li>أتمتة سير العمل</li>
+                    <li>تكاملات API</li>
+                    <li>تقارير ولوحات معلومات مخصصة</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔄</div>
+                <h3 class="service-title">تكامل النظام</h3>
+                <p class="service-description">ربط Odoo بسلاسة مع أنظمتك الحالية وتطبيقات الطرف الثالث وقواعد البيانات لنظام أعمال موحد.</p>
+                <ul class="service-features">
+                    <li>تكاملات الطرف الثالث</li>
+                    <li>تكامل بوابة الدفع</li>
+                    <li>منصات التجارة الإلكترونية</li>
+                    <li>ترحيل الأنظمة القديمة</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎓</div>
+                <h3 class="service-title">التدريب والدعم</h3>
+                <p class="service-description">برامج تدريب شاملة ودعم مستمر لضمان استفادة فريقك من أقصى قيمة من استثمار Odoo الخاص بك.</p>
+                <ul class="service-features">
+                    <li>برامج تدريب المستخدمين</li>
+                    <li>تدريب المسؤولين</li>
+                    <li>دعم فني على مدار الساعة</li>
+                    <li>تحديثات منتظمة للنظام</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3 class="service-title">خدمات استشارية</h3>
+                <p class="service-description">إرشادات استراتيجية لتحسين عمليات عملك والاستفادة من الإمكانات الكاملة لـ Odoo لتحقيق أقصى عائد استثمار.</p>
+                <ul class="service-features">
+                    <li>تحسين عمليات الأعمال</li>
+                    <li>استشارات استراتيجية ERP</li>
+                    <li>خارطة طريق التحول الرقمي</li>
+                    <li>تحسين الأداء</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3 class="service-title">الصيانة والترقيات</h3>
+                <p class="service-description">حافظ على تشغيل نظامك بسلاسة مع الصيانة المنتظمة والتحديثات وترقيات الإصدار إلى أحدث إصدارات Odoo.</p>
+                <ul class="service-features">
+                    <li>صيانة منتظمة للنظام</li>
+                    <li>ترقيات الإصدار</li>
+                    <li>مراقبة الأداء</li>
+                    <li>تحديثات الأمان</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Process Page -->
+    <div class="page">
+        <img src="bp_logo.png" alt="Business Partner Tech" class="page-logo">
+        <div class="page-header">
+            <h1 class="page-title">عمليتنا</h1>
+            <p class="page-subtitle">الطريقة التي يجب أن يتم بها ERP</p>
+        </div>
+
+        <p class="intro-text">
+            نحن نستبدل الأنظمة المكلفة والمجزأة بحل موحد. تضمن منهجيتنا المثبتة التنفيذ الناجح في كل مرة.
+        </p>
+
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3 class="step-title">الاكتشاف والتدقيق</h3>
+                    <p class="step-description">نحلل سير عمل عملك ونقاط الألم والمتطلبات. يقوم فريقنا بتخطيط عملياتك على الميزات القياسية لـ Odoo لتقليل تكاليف التخصيص.</p>
+                    <div class="step-points">
+                        <div class="step-point">تحليل عمليات الأعمال</div>
+                        <div class="step-point">جمع المتطلبات</div>
+                        <div class="step-point">تحليل الفجوات والتوصيات</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3 class="step-title">التصميم والتكوين</h3>
+                    <p class="step-description">يقوم مهندسونا المعتمدون بتكوين وحدات Odoo الخاصة بك، وإعداد سير العمل، وتخصيص النظام ليطابق احتياجات عملك. نبني وحدات مخصصة عند الحاجة.</p>
+                    <div class="step-points">
+                        <div class="step-point">تكوين الوحدات</div>
+                        <div class="step-point">التطوير المخصص</div>
+                        <div class="step-point">إعداد التكامل</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3 class="step-title">الترحيل والاختبار</h3>
+                    <p class="step-description">ننقل بياناتك بدون توقف، ونجري اختباراً شاملاً، ونضمن أن كل شيء يعمل بشكل مثالي قبل التشغيل. يستمر عملك دون انقطاع.</p>
+                    <div class="step-points">
+                        <div class="step-point">نقل البيانات والتحقق</div>
+                        <div class="step-point">اختبار قبول المستخدم</div>
+                        <div class="step-point">تحسين الأداء</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3 class="step-title">الإطلاق والدعم</h3>
+                    <p class="step-description">نقدم تدريباً عملياً لفريقك، ونإدارة عملية التشغيل، ونقدم دعماً مستمراً لضمان التوسع بسلاسة وتعظيم عائد الاستثمار.</p>
+                    <div class="step-points">
+                        <div class="step-point">تدريب الفريق والإعداد</div>
+                        <div class="step-point">دعم التشغيل</div>
+                        <div class="step-point">الصيانة والتحديثات المستمرة</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Choose Us Page -->
+    <div class="page">
+        <img src="bp_logo.png" alt="Business Partner Tech" class="page-logo">
+        <div class="page-header">
+            <h1 class="page-title">لماذا تختارنا</h1>
+            <p class="page-subtitle">نجاحك هو أولويتنا</p>
+        </div>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">✓</div>
+                <div class="benefit-content">
+                    <h4>شريك Odoo المعتمد</h4>
+                    <p>تضمن حالة الشريك الرسمي لـ Odoo حصولك على إرشادات ودعم خبير مدعوم بمعايير Odoo العالمية.</p>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">👥</div>
+                <div class="benefit-content">
+                    <h4>فريق خبير</h4>
+                    <p>وصول مباشر إلى مستشارين كبار ومطورين معتمدين بسجلات حافلة في التنفيذ الناجح.</p>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🎯</div>
+                <div class="benefit-content">
+                    <h4>منهجية مثبتة</h4>
+                    <p>تم تحسين نهج التنفيذ المنظم لدينا من خلال مشاريع ناجحة عديدة عبر صناعات مختلفة.</p>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🔧</div>
+                <div class="benefit-content">
+                    <h4>دعم مستمر</h4>
+                    <p>دعم فني وصيانة على مدار الساعة للحفاظ على تشغيل نظامك بسلاسة وكفاءة في جميع الأوقات.</p>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">⚡</div>
+                <div class="benefit-content">
+                    <h4>تنفيذ سريع</h4>
+                    <p>نشر سريع دون المساس بالجودة، وجعل عملك جاهزاً وقيد التشغيل بسرعة.</p>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <div class="benefit-content">
+                    <h4>حلول فعالة من حيث التكلفة</h4>
+                    <p>تسعير شفاف بدون تكاليف خفية. نعظم عائد الاستثمار من خلال الاستفادة من ميزات Odoo القياسية أولاً.</p>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🔒</div>
+                <div class="benefit-content">
+                    <h4>الأمان أولاً</h4>
+                    <p>تدابير أمنية على مستوى المؤسسة لحماية بيانات عملك وضمان الامتثال للوائح.</p>
+                </div>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">📈</div>
+                <div class="benefit-content">
+                    <h4>حلول قابلة للتوسع</h4>
+                    <p>أنظمة مصممة للنمو مع عملك، وإضافة ميزات ووحدات جديدة بسهولة حسب الحاجة.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Why Choose Us - Page 2 -->
+    <div class="page">
+        <img src="bp_logo.png" alt="Business Partner Tech" class="page-logo">
+        <div class="highlight-box" style="margin-top: 0;">
+            <h3>التزامنا بالتميز</h3>
+            <p>
+                نؤمن بأن كل عمل لديه القدرة على الازدهار وتحقيق العظمة. فريقنا متحمس لتقديم خدمات متفوقة وحلول لا مثيل لها تدفع قيمة الأعمال الحقيقية. لا ننفذ البرامج فقط - بل نحول الأعمال.
+            </p>
+        </div>
+
+        <div style="margin-top: 40px; padding: 30px; background: white; border-radius: 15px; border: 2px solid #e2e8f0;">
+            <h3 style="font-size: 24px; color: #1e3a8a; margin-bottom: 20px; font-weight: 700;">شراكة Field Solutions</h3>
+            <p style="font-size: 14px; color: #64748b; line-height: 1.6; margin-bottom: 15px;">
+                كجزء من Field Solutions، نجلب مزيجاً فريداً من التفكير الاستراتيجي والتنفيذ العملي. يضمن نهجنا أن الشراكات تعمل بسلاسة في منطقة الشرق الأوسط وشمال إفريقيا، وتحقق التوقعات وتتجاوزها.
+            </p>
+            <p style="font-size: 14px; color: #64748b; line-height: 1.6;">
+                نحن هنا لمساعدتك على اختراق أسواق جديدة وزيادة الحصة السوقية في واحدة من أكثر بيئات الأعمال ديناميكية في العالم.
+            </p>
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div class="page contact-page">
+        <img src="bp_logo.png" alt="Business Partner Tech" class="page-logo">
+        <div class="page-header">
+            <h1 class="page-title">تواصل معنا</h1>
+            <p class="page-subtitle">لنحول عملك معاً</p>
+        </div>
+
+        <p class="intro-text">
+            هل أنت مستعد لنقل عملك إلى المستوى التالي؟ اتصل بنا اليوم للحصول على استشارة مجانية وشاهد كيف يمكن لـ Odoo إحداث ثورة في عملياتك.
+        </p>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3 style="font-size: 20px; color: #1e3a8a; margin-bottom: 20px; font-weight: 700;">معلومات الاتصال</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">✉</div>
+                    <div class="contact-details">
+                        <h4>عنوان البريد الإلكتروني</h4>
+                        <p>atoubar@fieldsolutions.so</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h4>رقم الهاتف</h4>
+                        <p>+966 59 603 2233</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
+                    <div class="contact-details">
+                        <h4>واتساب</h4>
+                        <p>+966 59 603 2233</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">🌐</div>
+                    <div class="contact-details">
+                        <h4>الموقع الإلكتروني</h4>
+                        <p>www.fieldsolutions.so</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <h3 style="font-size: 20px; color: #1e3a8a; margin-bottom: 20px; font-weight: 700;">ماذا تتوقع</h3>
+                
+                <div style="margin-bottom: 18px;">
+                    <h4 style="font-size: 14px; font-weight: 600; color: #1e3a8a; margin-bottom: 6px;">استجابة سريعة</h4>
+                    <p style="font-size: 12px; color: #64748b; line-height: 1.5;">سنعود إليك خلال 24 ساعة لجدولة استشارة.</p>
+                </div>
+
+                <div style="margin-bottom: 18px;">
+                    <h4 style="font-size: 14px; font-weight: 600; color: #1e3a8a; margin-bottom: 6px;">استشارة مجانية</h4>
+                    <p style="font-size: 12px; color: #64748b; line-height: 1.5;">ناقش احتياجات عملك واستكشف كيف يمكن لـ Odoo مساعدتك على النمو.</p>
+                </div>
+
+                <div style="margin-bottom: 18px;">
+                    <h4 style="font-size: 14px; font-weight: 600; color: #1e3a8a; margin-bottom: 6px;">عرض مخصص</h4>
+                    <p style="font-size: 12px; color: #64748b; line-height: 1.5;">احصل على حل مخصص بأسعار شفافة وجداول زمنية واضحة.</p>
+                </div>
+
+                <div>
+                    <h4 style="font-size: 14px; font-weight: 600; color: #1e3a8a; margin-bottom: 6px;">عرض توضيحي مباشر</h4>
+                    <p style="font-size: 12px; color: #64748b; line-height: 1.5;">شاهد Odoo في العمل مع عرض توضيحي مخصص للميزات ذات الصلة بعملك.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back Cover -->
+    <div class="back-cover">
+        <img src="bp_logo.png" alt="Business Partner Tech" class="back-cover-logo">
+        <div class="back-cover-content">
+            <h2>هل أنت مستعد لتحويل عملك؟</h2>
+            <p>توقف عن التعامل مع الأنظمة المنفصلة. لنبني حل ERP موحد ينمو مع نموك ويدفع قيمة الأعمال الحقيقية.</p>
+            <div class="back-cover-cta">احجز عرضك التجريبي المجاني اليوم</div>
+            <div class="footer-info">
+                <p style="margin-bottom: 10px;">Business Partner Tech - شريك Odoo المعتمد</p>
+                <p>البريد الإلكتروني: atoubar@fieldsolutions.so | الهاتف: +966 59 603 2233</p>
+                <p style="margin-top: 20px; font-size: 12px;">© 2024 Business Partner Tech. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating PDF Download Button -->
+    <button onclick="window.print()" class="pdf-download-float" aria-label="تحميل ملف الشركة" title="تحميل ملف الشركة">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span class="pdf-text">تحميل ملف الشركة</span>
+    </button>
+
+    <style>
+        .pdf-download-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: #FFF;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            animation: pulse-pdf 2s infinite;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .pdf-download-float:hover {
+            background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.5);
+        }
+
+        .pdf-download-float:active {
+            transform: translateY(-1px);
+        }
+
+        .pdf-text {
+            font-size: 14px;
+        }
+
+        @keyframes pulse-pdf {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(30, 58, 138, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(30, 58, 138, 0.6), 0 0 0 10px rgba(30, 58, 138, 0.1);
+            }
+        }
+
+        @media print {
+            .pdf-download-float {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pdf-download-float {
+                bottom: 20px;
+                left: 20px;
+                padding: 12px 20px;
+            }
+            
+            .pdf-text {
+                display: none;
+            }
+            
+            .pdf-download-float {
+                width: 56px;
+                height: 56px;
+                padding: 0;
+            }
+        }
+    </style>
+
+    <script>
+        // No auto-print - users can manually click "تحميل ملف الشركة" button when ready
+    </script>
+</body>
+</html>
+

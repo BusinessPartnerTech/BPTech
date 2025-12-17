@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Transformation - Business Partner Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: transparent;
+            color: white;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        .video-container {
+            width: 100%;
+            height: 700px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Ensure all content fits within 700px iframe container */
+        @media (max-height: 800px) {
+            .slide {
+                transform: scale(0.9);
+                transform-origin: center center;
+                padding: 25px 50px;
+            }
+        }
+        
+        @media (max-height: 750px) {
+            .slide {
+                transform: scale(0.82);
+                padding: 22px 45px;
+            }
+        }
+        
+        @media (max-height: 650px) {
+            .slide {
+                transform: scale(0.72);
+                padding: 18px 35px;
+            }
+        }
+        
+        @media (max-height: 550px) {
+            .slide {
+                transform: scale(0.62);
+                padding: 15px 30px;
+            }
+        }
+
+        /* Slide Styles */
+        .slide {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            padding: 30px 60px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        /* Slide 1: Opening */
+        .slide-1 {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #3b82f6 100%);
+        }
+
+        .logo-container {
+            margin-bottom: 32px;
+            animation: fadeInScale 1.5s ease-out;
+            background: white;
+            padding: 16px 26px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+        }
+        
+        .logo-img {
+            width: 170px;
+            height: auto;
+            display: block;
+        }
+        
+        .slide-1 .logo-container {
+            margin-bottom: 32px;
+        }
+
+        .slide-1 h1 {
+            font-size: 56px;
+            font-weight: 900;
+            margin-bottom: 18px;
+            background: linear-gradient(to right, #fff, #60a5fa, #fff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite, fadeInUp 1.5s ease-out;
+            line-height: 1.1;
+        }
+
+        .slide-1 p {
+            font-size: 22px;
+            font-weight: 300;
+            opacity: 0.95;
+            animation: fadeInUp 1.5s ease-out 0.5s both;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Slide 2: Problem Statement */
+        .slide-2 {
+            background: linear-gradient(135deg, #1e3a8a 0%, #991b1b 100%);
+        }
+
+        .slide-2 h2 {
+            font-size: 44px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            max-width: 1000px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .problem-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 18px;
+            border-radius: 10px;
+            animation: fadeInScale 1s ease-out;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .problem-card:nth-child(1) { animation-delay: 0.2s; }
+        .problem-card:nth-child(2) { animation-delay: 0.4s; }
+        .problem-card:nth-child(3) { animation-delay: 0.6s; }
+        .problem-card:nth-child(4) { animation-delay: 0.8s; }
+
+        .problem-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .problem-card h3 {
+            font-size: 18px;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .problem-card p {
+            font-size: 12px;
+            opacity: 0.95;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Slide 3: Solution */
+        .slide-3 {
+            background: linear-gradient(135deg, #064e3b 0%, #0891b2 100%);
+        }
+
+        .slide-3 h2 {
+            font-size: 44px;
+            font-weight: 800;
+            margin-bottom: 18px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .slide-3 .subtitle {
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            max-width: 900px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 16px;
+            border-radius: 12px;
+            animation: slideInRight 1s ease-out;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-item:nth-child(1) { animation-delay: 0.2s; }
+        .feature-item:nth-child(2) { animation-delay: 0.4s; }
+        .feature-item:nth-child(3) { animation-delay: 0.6s; }
+
+        .feature-icon {
+            font-size: 36px;
+            min-width: 50px;
+        }
+
+        .feature-content h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        .feature-content p {
+            font-size: 12px;
+            opacity: 0.95;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Slide 4: Benefits */
+        .slide-4 {
+            background: linear-gradient(135deg, #4c1d95 0%, #c026d3 100%);
+        }
+
+        .slide-4 h2 {
+            font-size: 44px;
+            font-weight: 800;
+            margin-bottom: 28px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 26px 16px;
+            border-radius: 12px;
+            animation: fadeInUp 1s ease-out;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .benefit-card:nth-child(1) { animation-delay: 0.2s; }
+        .benefit-card:nth-child(2) { animation-delay: 0.4s; }
+        .benefit-card:nth-child(3) { animation-delay: 0.6s; }
+
+        .benefit-number {
+            font-size: 48px;
+            font-weight: 900;
+            margin-bottom: 12px;
+            background: linear-gradient(to right, #fff, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .benefit-card h3 {
+            font-size: 17px;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .benefit-card p {
+            font-size: 12px;
+            opacity: 0.95;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Slide 5: Process */
+        .slide-5 {
+            background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+        }
+
+        .slide-5 h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .process-timeline {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            max-width: 950px;
+            width: 100%;
+        }
+
+        .process-step {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 18px 12px;
+            border-radius: 10px;
+            flex: 1;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .process-step:nth-child(1) { animation-delay: 0.2s; }
+        .process-step:nth-child(2) { animation-delay: 0.4s; }
+        .process-step:nth-child(3) { animation-delay: 0.6s; }
+        .process-step:nth-child(4) { animation-delay: 0.8s; }
+
+        .process-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 900;
+            margin: 0 auto 12px;
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+        }
+
+        .process-step h3 {
+            font-size: 15px;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .process-step p {
+            font-size: 11px;
+            opacity: 0.95;
+            line-height: 1.3;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .arrow {
+            font-size: 24px;
+            opacity: 0.5;
+        }
+
+        /* Slide 6: CTA */
+        .slide-6 {
+            background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+        }
+
+        .slide-6 h2 {
+            font-size: 50px;
+            font-weight: 900;
+            margin-bottom: 24px;
+            animation: fadeInScale 1s ease-out;
+        }
+
+        .slide-6 p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            font-weight: 300;
+            max-width: 750px;
+            animation: fadeInUp 1s ease-out 0.3s both;
+            opacity: 0.95;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 20px 50px;
+            background: white;
+            color: #7c3aed;
+            font-size: 21px;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite, fadeInUp 1s ease-out 0.6s both;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+        }
+
+        .contact-info {
+            margin-top: 32px;
+            font-size: 15px;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out 0.9s both;
+        }
+        
+        .contact-info p {
+            margin: 4px 0;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Slide 7: Closing */
+        .slide-7 {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+        }
+
+        .slide-7 .logo-container {
+            margin-bottom: 32px;
+        }
+        
+        .slide-7 .logo-img {
+            width: 185px;
+        }
+
+        .slide-7 h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .slide-7 p {
+            font-size: 20px;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease-out 0.8s both;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Background Animation */
+        .bg-animation {
+            display: none;
+        }
+
+        .particle {
+            display: none;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* Controls */
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            padding: 12px 25px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .slide-indicator {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .indicator-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator-dot.active {
+            background: white;
+            width: 30px;
+            border-radius: 10px;
+        }
+
+        .auto-play-btn {
+            background: rgba(59, 130, 246, 0.8);
+        }
+
+        .auto-play-btn.playing {
+            background: rgba(239, 68, 68, 0.8);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .slide-1 h1 {
+                font-size: 56px;
+            }
+
+            .slide h2 {
+                font-size: 48px !important;
+            }
+
+            .problems-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-timeline {
+                flex-direction: column;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <!-- Slide 1: Opening -->
+        <div class="slide slide-1 active">
+            <div class="bg-animation" id="particles1"></div>
+            <div class="logo-container">
+                <img src="bp_logo.png" alt="Business Partner Tech" class="logo-img">
+            </div>
+            <h1>Transform Your Business</h1>
+            <p>Unlock Limitless Growth with Odoo ERP</p>
+        </div>
+
+        <!-- Slide 2: Problem -->
+        <div class="slide slide-2">
+            <div class="bg-animation" id="particles2"></div>
+            <h2>Are You Struggling With...</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">📊</div>
+                    <h3>Disconnected Systems</h3>
+                    <p>Multiple software tools that don't talk to each other, causing data silos and inefficiencies.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">⏰</div>
+                    <h3>Manual Processes</h3>
+                    <p>Time-consuming manual tasks eating away at your team's productivity and resources.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">💸</div>
+                    <h3>Rising Costs</h3>
+                    <p>Expensive, fragmented systems draining your budget without delivering real value.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">📉</div>
+                    <h3>Limited Visibility</h3>
+                    <p>Lack of real-time insights making it impossible to make data-driven decisions.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Solution -->
+        <div class="slide slide-3">
+            <div class="bg-animation" id="particles3"></div>
+            <h2>One Unified Solution</h2>
+            <p class="subtitle">Odoo ERP: All-in-One Business Management</p>
+            <div class="features-list">
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <div class="feature-content">
+                        <h3>Complete Integration</h3>
+                        <p>Connect all your business operations in one powerful platform - from sales to accounting to inventory.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-content">
+                        <h3>Automated Workflows</h3>
+                        <p>Eliminate repetitive tasks and let your team focus on what truly matters - growing your business.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📈</div>
+                    <div class="feature-content">
+                        <h3>Real-Time Insights</h3>
+                        <p>Make informed decisions with live dashboards and comprehensive analytics at your fingertips.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Benefits -->
+        <div class="slide slide-4">
+            <div class="bg-animation" id="particles4"></div>
+            <h2>The Transformation Results</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-number">50%</div>
+                    <h3>Time Saved</h3>
+                    <p>Reduce manual work and focus on strategic growth</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">40%</div>
+                    <h3>Cost Reduction</h3>
+                    <p>Eliminate redundant systems and optimize operations</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-number">3X</div>
+                    <h3>Faster Growth</h3>
+                    <p>Scale effortlessly with automated processes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Process -->
+        <div class="slide slide-5">
+            <div class="bg-animation" id="particles5"></div>
+            <h2>Our Proven Process</h2>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>Understand your business needs and map workflows</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <h3>Design</h3>
+                    <p>Configure and customize Odoo to fit your processes</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <h3>Deploy</h3>
+                    <p>Seamless migration and comprehensive team training</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <h3>Grow</h3>
+                    <p>Ongoing support and continuous optimization</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: CTA -->
+        <div class="slide slide-6">
+            <div class="bg-animation" id="particles6"></div>
+            <h2>Ready to Transform?</h2>
+            <p>Join successful businesses that have revolutionized their operations with Odoo ERP</p>
+            <a href="contact.html" class="cta-button">Book Your Free Demo</a>
+            <div class="contact-info">
+                <p>📧 atoubar@fieldsolutions.so</p>
+                <p>📱 +966 59 603 2233</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: Closing -->
+        <div class="slide slide-7">
+            <div class="bg-animation" id="particles7"></div>
+            <div class="logo-container">
+                <img src="bp_logo.png" alt="Business Partner Tech" class="logo-img">
+            </div>
+            <h2>Business Partner Tech</h2>
+            <p>Your Certified Odoo Partner</p>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button class="control-btn" id="prevBtn">←</button>
+        <div class="slide-indicator">
+            <span class="indicator-dot active" data-slide="0"></span>
+            <span class="indicator-dot" data-slide="1"></span>
+            <span class="indicator-dot" data-slide="2"></span>
+            <span class="indicator-dot" data-slide="3"></span>
+            <span class="indicator-dot" data-slide="4"></span>
+            <span class="indicator-dot" data-slide="5"></span>
+            <span class="indicator-dot" data-slide="6"></span>
+        </div>
+        <button class="control-btn" id="nextBtn">→</button>
+        <button class="control-btn auto-play-btn" id="autoPlayBtn">▶</button>
+    </div>
+
+    <!-- Audio Elements - Slow Ambient Music -->
+    <audio id="videoAudio">
+        <!-- Video1 audio -->
+        <source src="Video1.mp4" type="audio/mp4">
+    </audio>
+
+    <script>
+        // Audio Management
+        const videoAudio = document.getElementById('videoAudio');
+        
+        // Set volume
+        videoAudio.volume = 0.6;
+
+        // Play audio function
+        function playVideoAudio() {
+            videoAudio.currentTime = 0;
+            videoAudio.play().catch(e => console.log('Audio play failed:', e));
+        }
+
+        // Stop audio function
+        function stopVideoAudio() {
+            videoAudio.pause();
+            videoAudio.currentTime = 0;
+        }
+
+        // Slide Management
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator-dot');
+        const totalSlides = slides.length;
+        let autoPlayInterval;
+        let isAutoPlaying = false;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                indicators[i].classList.remove('active');
+            });
+            
+            currentSlide = (index + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            indicators[currentSlide].classList.add('active');
+        }
+
+        function getSlideInterval() {
+            // 1 second for first slide (to slide 2), 3 seconds for rest
+            return currentSlide === 0 ? 1000 : 3000;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+            // Restart interval with appropriate timing for new slide
+            if (isAutoPlaying) {
+                clearInterval(autoPlayInterval);
+                autoPlayInterval = setInterval(nextSlide, getSlideInterval());
+            }
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+            // Restart interval with appropriate timing for new slide
+            if (isAutoPlaying) {
+                clearInterval(autoPlayInterval);
+                autoPlayInterval = setInterval(nextSlide, getSlideInterval());
+            }
+        }
+
+        function toggleAutoPlay() {
+            const btn = document.getElementById('autoPlayBtn');
+            if (isAutoPlaying) {
+                clearInterval(autoPlayInterval);
+                btn.textContent = '▶';
+                btn.classList.remove('playing');
+                isAutoPlaying = false;
+                stopVideoAudio();
+            } else {
+                autoPlayInterval = setInterval(nextSlide, getSlideInterval());
+                btn.textContent = '⏸';
+                btn.classList.add('playing');
+                isAutoPlaying = true;
+                playVideoAudio();
+            }
+        }
+
+        // Event Listeners
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            nextSlide();
+            // Interval is already restarted in nextSlide()
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            prevSlide();
+            // Interval is already restarted in prevSlide()
+        });
+
+        document.getElementById('autoPlayBtn').addEventListener('click', () => {
+            toggleAutoPlay();
+        });
+
+        indicators.forEach(indicator => {
+            indicator.addEventListener('click', () => {
+                showSlide(parseInt(indicator.dataset.slide));
+                if (isAutoPlaying) {
+                    clearInterval(autoPlayInterval);
+                    autoPlayInterval = setInterval(nextSlide, getSlideInterval());
+                }
+            });
+        });
+
+        // Play audio when clicking on slide
+        document.querySelector('.video-container').addEventListener('click', (e) => {
+            // Don't trigger if clicking on controls
+            if (!e.target.closest('.controls')) {
+                if (videoAudio.paused) {
+                    playVideoAudio();
+                } else {
+                    stopVideoAudio();
+                }
+            }
+        });
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                nextSlide();
+            }
+            if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+            if (e.key === ' ') {
+                e.preventDefault();
+                toggleAutoPlay();
+            }
+        });
+
+        // Particles disabled for cleaner look
+        // function createParticles(containerId) {
+        //     const container = document.getElementById(containerId);
+        //     if (!container) return;
+        //     
+        //     for (let i = 0; i < 50; i++) {
+        //         const particle = document.createElement('div');
+        //         particle.className = 'particle';
+        //         particle.style.left = Math.random() * 100 + '%';
+        //         particle.style.animationDelay = Math.random() * 20 + 's';
+        //         particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+        //         container.appendChild(particle);
+        //     }
+        // }
+
+        // Initialize particles for all slides - DISABLED
+        // for (let i = 1; i <= 7; i++) {
+        //     createParticles('particles' + i);
+        // }
+
+        // Auto-start presentation when user interacts with page
+        function startPresentation() {
+            toggleAutoPlay();
+            document.removeEventListener('click', startPresentation);
+            document.removeEventListener('keydown', startPresentation);
+        }
+
+        // Wait for user interaction to start (browsers block autoplay)
+        document.addEventListener('click', startPresentation);
+        document.addEventListener('keydown', startPresentation);
+
+        // Show instructions
+        setTimeout(() => {
+            if (!isAutoPlaying) {
+                const instruction = document.createElement('div');
+                instruction.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: rgba(0, 0, 0, 0.9);
+                    color: white;
+                    padding: 40px 60px;
+                    border-radius: 20px;
+                    font-size: 24px;
+                    text-align: center;
+                    z-index: 10000;
+                    animation: fadeInScale 0.5s ease-out;
+                    border: 2px solid rgba(255, 255, 255, 0.3);
+                `;
+                instruction.innerHTML = `
+                    <h3 style="margin-bottom: 20px; font-size: 32px;">🎬 Click Anywhere to Start</h3>
+                    <p style="opacity: 0.8;">Click on presentation to play audio</p>
+                `;
+                document.body.appendChild(instruction);
+                
+                const removeInstruction = () => {
+                    instruction.remove();
+                    document.removeEventListener('click', removeInstruction);
+                };
+                document.addEventListener('click', removeInstruction);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
+
